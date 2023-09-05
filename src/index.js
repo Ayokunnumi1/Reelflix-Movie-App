@@ -1,3 +1,3 @@
-import _ from 'lodash';
+// import _ from 'lodash';
 import './style.css';
-import image from './asset/img/14.png';
+// import image from './asset/img/14.png';
