@@ -29,9 +29,9 @@
   --bs-dark-text: #495057;
 }
 
- body {
+body {
   background: var(--bs-dark);
-} 
+}
 
 main {
   border: solid 2px var(--bs-danger);
@@ -52,7 +52,6 @@ header {
 .nav-content {
   display: flex;
   list-style: none;
-
 }
 
 .nav-content li {
@@ -66,16 +65,16 @@ button {
   height: 3vw;
   border-radius: 10px;
 }
+
 .sign-in {
   margin-right: 1rem;
-
 }
+
 .home-container {
   border: solid 2px var(--bs-primary);
-  background: url(./asset/img/home__bg.jpg) no-repeat; 
+  background: url(./asset/img/home__bg.jpg) no-repeat;
   position: relative;
 }
-
 
 .container-cards {
   border: solid 2px var(--bs-cyan);
@@ -83,14 +82,14 @@ button {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
- .overlay {
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(64, 54, 66, 0.459); 
-  z-index: 1; 
+  background-color: rgba(64, 54, 66, 0.459);
+  z-index: 1;
 }
 
 .logo {
@@ -119,4 +118,3 @@ hr {
   height: 2px;
   background: var(--bs-pink);
 }
-
