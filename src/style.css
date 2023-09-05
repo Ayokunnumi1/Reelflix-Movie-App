@@ -97,13 +97,13 @@ button {
   height: 150px;
 }
 
-.cards {
+/* .cards {
   background: url('./asset/img/14.png');
   background-repeat: no-repeat;
   width: 300px;
   height: 350px;
   z-index: 5;
-}
+} */
 
 .footer-copyright {
   flex-direction: row;
