@@ -1,0 +1,122 @@
+
+:root {
+  --bs-pink: #f15aa6;
+  --bs-red: #dc3545;
+  --bs-cyan: #0dcaf0;
+  --bs-black: #000;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-gray-500: #adb5bd;
+  --bs-gray-600: #6c757d;
+  --bs-gray-700: #495057;
+  --bs-gray-800: #343a40;
+  --bs-gray-900: #212529;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-secondary-text: #6c757d;
+  --bs-success-text: #146c43;
+  --bs-info-text: #087990;
+  --bs-warning-text: #997404;
+  --bs-danger-text: #b02a37;
+  --bs-light-text: #6c757d;
+  --bs-dark-text: #495057;
+}
+
+ body {
+  background: var(--bs-dark);
+} 
+
+main {
+  border: solid 2px var(--bs-danger);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  border: solid 2px var(--bs-dark);
+  background: var(--bs-dark);
+}
+
+.header-content-nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-content {
+  display: flex;
+  list-style: none;
+
+}
+
+.nav-content li {
+  margin-left: 1rem;
+}
+
+button {
+  margin-left: 1rem;
+  background-color: #f15aa6;
+  width: 8vw;
+  height: 3vw;
+  border-radius: 10px;
+}
+.sign-in {
+  margin-right: 1rem;
+
+}
+.home-container {
+  border: solid 2px var(--bs-primary);
+  background: url(./asset/img/home__bg.jpg) no-repeat; 
+  position: relative;
+}
+
+
+.container-cards {
+  border: solid 2px var(--bs-cyan);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+ .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(64, 54, 66, 0.459); /* Adjust the opacity (last value) as needed */
+  z-index: 1; /* Place the overlay above the image */
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+}
+
+.cards {
+  background: url('./asset/img/14.png');
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 350px;
+  z-index: 5;
+}
+
+.footer-copyright {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 70px;
+  background: var(--bs-gray-900);
+  color: #f8f9fa;
+}
+
+hr {
+  height: 2px;
+  background: var(--bs-pink);
+}
+
