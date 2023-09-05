@@ -14,7 +14,7 @@
   --bs-gray-900: #212529;
   --bs-primary: #0d6efd;
   --bs-secondary: #6c757d;
-  --bs-success: #198754;
+  --bs-success: #155f3ce7;
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
@@ -22,7 +22,7 @@
   --bs-dark: #212529;
   --bs-secondary-text: #6c757d;
   --bs-success-text: #146c43;
-  --bs-info-text: #087990;
+  --bs-info-text: #5a8189;
   --bs-warning-text: #997404;
   --bs-danger-text: #b02a37;
   --bs-light-text: #6c757d;
@@ -32,20 +32,27 @@
 body {
   margin: auto 0;
   overflow-x: hidden;
-  background-color: var(--bs-dark);
+  background-color: var(--bs-gray-700);
+  
 }
 
 main {
-  border-bottom: 2px solid var(--bs-pink);
+  border-bottom: 2px solid var(--bs-light);
+  margin-top: 12rem;
 }
 
 header {
   display: flex;
   justify-content: space-between;
-  background: var(--bs-pink);
-  border-bottom: 2px solid var(--bs-pink);
+  background: #4752eecc;
+  border-bottom: 2px solid var(--bs-white);
   color: var(--bs-light);
   padding: 0.5rem;
+ position: fixed;
+  z-index: 10;
+  width: 100%;
+ top: 0;
+ 
 }
 
 .nav-content {
@@ -71,9 +78,8 @@ header {
 }
 
 .header-content-nav button {
-  background-color: var(--bs-pink); /* Define button background color */
+  background-color: var(--bs-primary); /* Define button background color */
   color: var(--bs-light);
-  border-radius: 4px;
   cursor: pointer;
   margin-top: 0.4rem;
   border-radius: 90px;
@@ -120,6 +126,8 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
+  row-gap: 10px;
+
 }
 
 .header-content-logo {
@@ -153,19 +161,29 @@ form {
 
 .search-button,
 .comment-button {
-  background-color: var(--bs-pink);
+  background-color: var(--bs-primary);
   color: var(--bs-light);
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-.search-button:hover {
+.comment-button,.search-button:hover {
   background-color: var(--bs-cyan);
 }
 
 .card {
   margin: 0.5rem;
+  border-radius: 11px;
+ 
+  box-shadow: 0 4px 8px rgba(50, 108, 184, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  
 }
 
 .card-title {
@@ -177,6 +195,13 @@ form {
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
+  
+}
+
+
+
+.card-content h3 {
+  color: var(--bs-light);
 }
 
 .cards,
@@ -185,10 +210,10 @@ form {
   background: url('./asset/img/14.png');
   background-repeat: no-repeat;
   background-size: cover;
-  margin-top: 0.5rem;
-  width: 300px;
+  width: 290px;
   height: 350px;
   z-index: 5;
+  border-radius: 10px;
 }
 
 .cards1 {
@@ -205,9 +230,9 @@ form {
   background:
     linear-gradient(
       to right,
-      var(--bs-secondary),
-      var(--bs-success),
-      var(--bs-dark)
+      var(--bs-white),
+      var(--bs-white),
+      var(--bs-cyan)
     );
   background-clip: text;
   -webkit-background-clip: text;
