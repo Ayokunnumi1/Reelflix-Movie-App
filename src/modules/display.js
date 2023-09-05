@@ -8,7 +8,7 @@ export const displayShows = async () => {
   try {
       const shows = await fetchShows(url);
       const showsData = await shows.json();
-      const createShowObj = showsData.map((shows) => {
+      const createShows = showsData.map((shows) => {
           const showsTemplate = 
       })
   } catch (error) {
