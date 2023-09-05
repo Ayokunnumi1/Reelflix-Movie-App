@@ -16,7 +16,7 @@ export const displayShows = async () => {
       };
       return showObj;
     });
-    console.log(filteredShowObject);
+    // console.log(filteredShowObject);
     const createShowElement = filteredShowObject.map((filterShow) => {
       const showElement = `<div class="movie-content-container">
 
