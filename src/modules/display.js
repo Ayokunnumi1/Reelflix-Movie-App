@@ -9,7 +9,7 @@ const url = 'https://api.tvmaze.com/shows';
 const displayPopUp = async (buttonId) => {
   try {
     const showsPopDetails = await fetchShowsDetails(url, buttonId);
-    console.log(showsPopDetails);
+    // console.log(showsPopDetails);
     const showPopObject = {
       title: showsPopDetails.name,
       image: showsPopDetails.image.medium,
@@ -29,7 +29,7 @@ const displayPopUp = async (buttonId) => {
                 <p>${showPopObject.rating}</p>
                 <div class="close-button">&#10006;</div>`;
     popUpModal.innerHTML = popUpElement;
-    console.log(popUpElement);
+    // console.log(popUpElement);
     return showPopObject;
   } catch (error) {
     return error;
@@ -75,9 +75,9 @@ export const displayShows = async () => {
     // console.log(commentButton);
     commentButton.forEach((button) => {
       button.addEventListener('click', (e) => {
-        console.log('clicked');
+        // console.log('clicked');
         const buttonId = parseInt(e.target.dataset.index, 10);
-        console.log(buttonId);
+        // console.log(buttonId);
         displayPopUp(buttonId);
         popUpModal.style.display = 'block';
       });
@@ -86,9 +86,9 @@ export const displayShows = async () => {
     // console.log(commentButton1);
     commentButton1.forEach((button) => {
       button.addEventListener('click', (e) => {
-        console.log('clicked');
+        // console.log('clicked');
         const buttonId = parseInt(e.target.dataset.index1, 10);
-        console.log(buttonId);
+        // console.log(buttonId);
         displayPopUp(buttonId);
         popUpModal.style.display = 'block';
       });
