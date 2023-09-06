@@ -24,12 +24,11 @@
   --bs-info-text: #5a8189;
 }
 
-
-
 body {
   margin: auto 0;
   overflow-x: hidden;
   position: relative;
+
   /* background-color: var(--bs-gray-700); */
   font-family: 'Montserrat', sans-serif;
 }
@@ -39,7 +38,7 @@ main {
   margin-top: 7rem;
 }
 
-main::before{
+main::before {
   content: '';
   position: absolute;
   z-index: 0;
@@ -52,7 +51,6 @@ main::before{
   opacity: 0.2;
 }
 
-
 header {
   display: flex;
   justify-content: space-between;
@@ -63,8 +61,7 @@ header {
   position: fixed;
   z-index: 10;
   width: 100%;
- top: 0;
- 
+  top: 0;
 }
 
 .header-content-logo {
@@ -78,7 +75,6 @@ header {
   height: 100px;
   border-radius: 50px;
 }
-
 
 .nav-content {
   display: flex;
@@ -103,13 +99,13 @@ header {
   color: var(--bs-light);
 }
 
- li a:hover {
+li a:hover {
   text-decoration: underline;
   color: var(--bs-warning);
 }
 
 /* .header-content-nav button {
-  background-color: var(--bs-primary); 
+  background-color: var(--bs-primary);
   color: var(--bs-light);
   cursor: pointer;
   margin-top: 0.4rem;
@@ -120,22 +116,6 @@ button {
   margin-left: 1rem;
   width: 8vw;
   height: 3vw;
-}
-
-.sign-in {
-  margin-right: 1rem;
-  background: none;
-  border: none;
-}
-
-.sign-in i {
-  font-size: 50px;
-  color: var(--bs-light);
-}
-
-.sign-in i:hover {
-  font-size: 50px;
-  color: var(--bs-warning);
 }
 
 .home-title {
@@ -149,7 +129,6 @@ button {
   overflow-x: hidden;
   margin-right: 0.5rem;
   position: relative;
-  
 }
 
 .home-container h2 {
@@ -158,12 +137,37 @@ button {
   margin-top: 2.5rem;
   text-transform: var(--bs-cyan);
   background: linear-gradient(45deg, #66fc3d, #46c4d2, #21a7e0ee);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-align: center;
-    font-size: 27px;
-    
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 27px;
+}
+
+.sign-in {
+  margin-right: 1rem;
+  background: none;
+  border: none;
+}
+
+.sign-in i {
+  font-size: 50px;
+  color: var(--bs-light);
+}
+
+.overlay i {
+  position: absolute;
+  bottom: 45%;
+  font-size: 50px;
+  color: var(--bs-light);
+}
+
+.movie-content i {
+  color: var(--bs-white);
+  font-size: 25px;
+}
+
+.sign-in i:hover {
+  font-size: 50px;
+  color: var(--bs-warning);
 }
 
 .container-cards {
@@ -173,7 +177,6 @@ button {
   row-gap: 10px;
   margin-top: 4rem;
 }
-
 
 form {
   display: flex;
@@ -207,7 +210,8 @@ form {
   font-family: 'Montserrat', sans-serif;
 }
 
-.comment-button,.search-button:hover {
+.comment-button,
+.search-button:hover {
   background-color: var(--bs-cyan);
 }
 
@@ -228,6 +232,13 @@ form {
   position: relative;
 }
 
+.movie-content {
+  padding: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0.5rem 0 0.5rem;
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -238,43 +249,28 @@ form {
   opacity: 0;
   transition: opacity 0.3s ease;
   border-radius: 12px;
-  
-}
-
-.overlay i {
-  position: absolute;
-  bottom: 45%;
-  font-size: 50px;
-  color: var(--bs-light);
 }
 
 .overlay i:hover {
   color: var(--bs-warning);
 }
 
-.movie-thumbnail:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(53, 139, 210, 0.4);
-}
-
-.overlay:hover  {
+.overlay:hover {
   opacity: 1;
-}
-
-.movie-content i {
-  color: var(--bs-white);
-  font-size: 25px;
 }
 
 .movie-content i:hover {
   color: var(--bs-danger);
 }
 
-.movie-content {
-  padding: 0.7rem;
+.movie-title {
   display: flex;
-  flex-direction: column;
-  margin: 0 0.5rem 0 0.5rem;
+  justify-content: space-between;
+}
+
+.movie-thumbnail:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(53, 139, 210, 0.4);
 }
 
 .comment-button {
@@ -284,13 +280,6 @@ form {
 .comment-button:hover {
   background: var(--bs-secondary);
 }
-
-.movie-title {
-  display: flex;
-  justify-content: space-between;
-}
-
-
 
 .footer-copyright {
   font-family: 'Montserrat', sans-serif;

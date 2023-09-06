@@ -3,71 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <title>Mini-Netflix</title>
 <script defer src="bundle.js"></script></head>
 <body>
     <main>
         <header class="header-content">
             <div class="header-content-logo">
-            <a href="" class="logo">
+
+                <a href="" >
+                <div class="logo"></div>
+             </a>
                
-            </a>
-                <button class="menu"> menu
-                </button>
             </div>
+
            
             <nav class="header-content-nav">       
                 <ul class="nav-content">
-                    <li><a href="catalog2.html">TV Series</a></li>
-                    <li><a href="catalog2.html">TV Series</a></li>
-                    <li><a href="catalog2.html">TV Series</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Feedbacks</a></li>
+                    <li><a href="#">Contact-Us</a></li>
+                    
                 </ul>
-           
-                <button class="search">
-                        search
-                </button>
-
                 <button class="sign-in">
-                 sign-in
+                <i class="fa fa-user"></i>
                 </button>
             </nav>
           
 
         </header>
 
+   
         <section class="home-container">
-           
-            <h2 class="home-title">
-                NEW items of the season
-                <div class="container-cards">
-                    <div class="overlay"></div>
-                    <div class="cards"> 
-                    </div>
-                    <div class="cards">  
-                    </div>
-                    <div class="cards"> 
-                    </div>
-                    <div class="cards">  
-                    </div>
-                    <div class="cards"> 
-                    </div>
-                    <div class="cards">  
-                    </div>
-                    <div class="cards"> 
-                    </div>
-                    <div class="cards">  
-                    </div>
+            <h2 class="home-title">Welcome to movie Stream</h2>
+            <form action="">
+                  <div class="search-input-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Enter your favourite movie">
+                    <button class="search-button" type="submit">search</button>
+                  </div>
+                  
+            </form>
+                
+             <div class="container-cards">
+               
+              
+                    <div class="movie-content-container"> 
+                        
+                        <!-- <div class="cards">
 
-
-                </div>
-            </h2>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Image 1 Name
+                                <span class="like-count">  <i class="fa fa-heart"></i> 0</span>  </h3>
+                            <button class="comment-button"> Comment</button>
+                          </div> -->
+                         
+                    </div>
+                   
         </section>
 
     </main>
-    <hr>
+ 
   <footer  class="footer-copyright">
    
-            <p>©Go-Joy, 2023. Create by <a href="#">Joy-Design</a>.</p>
+            <p>©Go-Joy, 2023. Created by- Design  with HyJoy 🤍</p>
 
   </footer>
 </body>
