@@ -137,6 +137,7 @@ button {
   background: linear-gradient(45deg, #66fc3d, #46c4d2, #21a7e0ee);
   -webkit-background-clip: text;
   color: transparent;
+  /* stylelint-disable-next-line csstree/validator */
   background-clip: text;
   font-size: 27px;
 }
@@ -303,6 +304,7 @@ form {
       var(--bs-warning),
       var(--bs-cyan)
     );
+  /* stylelint-disable-next-line csstree/validator */
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

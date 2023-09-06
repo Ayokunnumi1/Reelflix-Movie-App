@@ -43,7 +43,7 @@ var displayShows = /*#__PURE__*/function () {
             return showObj;
           }); // console.log(filteredShowObject);
           createShowElement = filteredShowObject.map(function (filterShow) {
-            var showElement = "<div class=\"movie-content-container\">\n    \n                    <div class=\"movie-thumbnail\">\n                        <img src=\"".concat(filterShow.image, "\" alt=\"\" class=\"movie-shows\" id=\"").concat(filterShow.id, "\">\n                        <div class=\"overlay\"></div>\n                    </div>\n                    <div class=\"movie-content\">\n                        <h3 class=\"movie-title\">").concat(filterShow.title, " <i class=\"fa fa-heart\"></i> </h3>\n                        <button class=\"comment-button\">Comment</button>\n                    </div>\n                  \n                </div>");
+            var showElement = "<div class=\"movie-content-container\">\n    \n                    <div class=\"movie-thumbnail\">\n                        <img src=\"".concat(filterShow.image, "\" alt=\"\" class=\"movie-shows\" id=\"").concat(filterShow.id, "\">\n                        <div class=\"overlay\"> <i class=\"fa fa-play\"></i></div>\n                    </div>\n                    <div class=\"movie-content\">\n                        <h3 class=\"movie-title\">").concat(filterShow.title, " </h3>\n                        <div class=\"movie-comment\">\n                        <i class=\"fa fa-heart\"></i> \n                        <button class=\"comment-button\">Comment</button>\n                        <button class=\"comment-button1\">  <i class=\"fa fa-comment\"></i></button>\n                    </div>\n                    </div>\n                  \n                </div>");
             return showElement;
           }).join('');
           movieContainer.insertAdjacentHTML('beforeend', createShowElement);
@@ -189,7 +189,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./asset/img/home__bg.jpg */ "./src/asset/img/home__bg.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ./asset/img/logo.jpg */ "./src/asset/img/logo.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
 // Module
@@ -217,14 +217,13 @@ ___CSS_LOADER_EXPORT___.push([module.id, `
   --bs-info-text: #5a8189;
 }
 
-
-
 body {
   margin: auto 0;
   overflow-x: hidden;
   position: relative;
+
   /* background-color: var(--bs-gray-700); */
-  
+  font-family: 'Montserrat', sans-serif;
 }
 
 main {
@@ -232,7 +231,7 @@ main {
   margin-top: 7rem;
 }
 
-main::before{
+main::before {
   content: '';
   position: absolute;
   z-index: 0;
@@ -245,7 +244,6 @@ main::before{
   opacity: 0.2;
 }
 
-
 header {
   display: flex;
   justify-content: space-between;
@@ -256,8 +254,7 @@ header {
   position: fixed;
   z-index: 10;
   width: 100%;
- top: 0;
- 
+  top: 0;
 }
 
 .header-content-logo {
@@ -271,7 +268,6 @@ header {
   height: 100px;
   border-radius: 50px;
 }
-
 
 .nav-content {
   display: flex;
@@ -296,13 +292,13 @@ header {
   color: var(--bs-light);
 }
 
- li a:hover {
+li a:hover {
   text-decoration: underline;
   color: var(--bs-warning);
 }
 
 /* .header-content-nav button {
-  background-color: var(--bs-primary); 
+  background-color: var(--bs-primary);
   color: var(--bs-light);
   cursor: pointer;
   margin-top: 0.4rem;
@@ -311,24 +307,8 @@ header {
 
 button {
   margin-left: 1rem;
-  width: 8vw;
-  height: 3vw;
-}
-
-.sign-in {
-  margin-right: 1rem;
-  background: none;
-  border: none;
-}
-
-.sign-in i {
-  font-size: 50px;
-  color: var(--bs-light);
-}
-
-.sign-in i:hover {
-  font-size: 50px;
-  color: var(--bs-warning);
+  width: 6vw;
+  height: 2vw;
 }
 
 .home-title {
@@ -342,23 +322,45 @@ button {
   overflow-x: hidden;
   margin-right: 0.5rem;
   position: relative;
-  
 }
 
 .home-container h2 {
-  color: var(--bs-black);
   text-align: center;
   margin-top: 2.5rem;
-  text-transform: var(--bs-cyan);
-  background: linear-gradient(45deg, #c3fc3d, #2d8acc, #80cff0ee);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-align: center;
-    font-size: 24px;
-    
+  background: linear-gradient(45deg, #66fc3d, #46c4d2, #21a7e0ee);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+  font-size: 27px;
 }
 
+.sign-in {
+  margin-right: 1rem;
+  background: none;
+  border: none;
+}
+
+.sign-in i {
+  font-size: 50px;
+  color: var(--bs-light);
+}
+
+.overlay i {
+  position: absolute;
+  bottom: 45%;
+  font-size: 50px;
+  color: var(--bs-light);
+}
+
+.movie-content i {
+  color: var(--bs-white);
+  font-size: 25px;
+}
+
+.sign-in i:hover {
+  font-size: 50px;
+  color: var(--bs-warning);
+}
 
 .container-cards {
   display: grid;
@@ -368,7 +370,6 @@ button {
   margin-top: 4rem;
 }
 
-
 form {
   display: flex;
   justify-content: flex-end;
@@ -376,6 +377,12 @@ form {
   top: 5px;
   right: 0;
   margin: 2rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.search-button {
+  width: 8vw;
+  height: 2.5vw;
 }
 
 .search-input-container {
@@ -397,9 +404,12 @@ form {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 13px;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.comment-button,.search-button:hover {
+.comment-button,
+.search-button:hover {
   background-color: var(--bs-cyan);
 }
 
@@ -409,6 +419,7 @@ form {
   box-shadow: 0 4px 8px rgba(50, 108, 184, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .movie-thumbnail {
@@ -416,6 +427,11 @@ form {
   z-index: 5;
   border-radius: 10px;
   text-align: center;
+  position: relative;
+}
+
+.movie-content {
+  padding: 3rem;
   position: relative;
 }
 
@@ -431,29 +447,36 @@ form {
   border-radius: 12px;
 }
 
-.movie-thumbnail:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(53, 139, 210, 0.4);
+.overlay i:hover {
+  color: var(--bs-warning);
 }
 
-.overlay:hover  {
+.overlay:hover {
   opacity: 1;
-}
-
-.movie-content i {
-  color: var(--bs-white);
-  font-size: 25px;
 }
 
 .movie-content i:hover {
   color: var(--bs-danger);
 }
 
-.movie-content {
-  padding: 0.7rem;
+.movie-content h3 {
+  padding-bottom: 1rem;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  color: var(--bs-red);
+}
+
+.movie-thumbnail:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(53, 139, 210, 0.4);
+}
+
+.movie-comment {
   display: flex;
-  flex-direction: column;
-  margin: 0 0.5rem 0 0.5rem;
+  justify-content: space-between;
+  position: relative;
+  top: 1.5rem;
 }
 
 .comment-button {
@@ -464,19 +487,13 @@ form {
   background: var(--bs-secondary);
 }
 
-.movie-title {
-  display: flex;
-  justify-content: space-between;
-}
-
-
-
 .footer-copyright {
+  font-family: 'Montserrat', sans-serif;
   background:
     linear-gradient(
       to right,
       var(--bs-white),
-      var(--bs-white),
+      var(--bs-warning),
       var(--bs-cyan)
     );
   background-clip: text;
@@ -484,10 +501,140 @@ form {
   color: transparent;
   padding: 20px;
   text-align: center;
-  align-self: flex-end;
-  flex-grow: 2;
+  font-weight: 700;
 }
-`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"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","sourcesContent":["\r\n@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');\r\n\r\n:root {\r\n  --bs-pink: #f15aa6;\r\n  --bs-red: #dc3545;\r\n  --bs-cyan: #0dcaf0;\r\n  --bs-black: #000000d7;\r\n  --bs-white: #fff;\r\n  --bs-gray: #6c757d;\r\n  --bs-gray-700: #495057;\r\n  --bs-gray-800: #343a40;\r\n  --bs-gray-900: #212529;\r\n  --bs-primary: #0d6efd;\r\n  --bs-secondary: #6c757d;\r\n  --bs-success: #155f3ce7;\r\n  --bs-info: #0dcaf0;\r\n  --bs-warning: #ffc107;\r\n  --bs-danger: #dc3545;\r\n  --bs-light: #f8f9fa;\r\n  --bs-dark: #212529;\r\n  --bs-secondary-text: #6c757d;\r\n  --bs-success-text: #146c43;\r\n  --bs-info-text: #5a8189;\r\n}\r\n\r\n\r\n\r\nbody {\r\n  margin: auto 0;\r\n  overflow-x: hidden;\r\n  position: relative;\r\n  /* background-color: var(--bs-gray-700); */\r\n  \r\n}\r\n\r\nmain {\r\n  border-bottom: 2px solid var(--bs-cyan);\r\n  margin-top: 7rem;\r\n}\r\n\r\nmain::before{\r\n  content: '';\r\n  position: absolute;\r\n  z-index: 0;\r\n  pointer-events: none;\r\n  top: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  background: url(./asset/img/home__bg.jpg);\r\n  opacity: 0.2;\r\n}\r\n\r\n\r\nheader {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  background: var(--bs-cyan);\r\n  border-bottom: 2px solid var(--bs-cyan);\r\n  color: var(--bs-light);\r\n  padding: 0.5rem;\r\n  position: fixed;\r\n  z-index: 10;\r\n  width: 100%;\r\n top: 0;\r\n \r\n}\r\n\r\n.header-content-logo {\r\n  display: flex;\r\n}\r\n\r\n.logo {\r\n  background: url('./asset/img/logo.jpg') no-repeat;\r\n  background-size: cover;\r\n  width: 100px;\r\n  height: 100px;\r\n  border-radius: 50px;\r\n}\r\n\r\n\r\n.nav-content {\r\n  display: flex;\r\n  list-style: none;\r\n  margin-right: 8rem;\r\n}\r\n\r\n.header-content-nav {\r\n  display: flex;\r\n  justify-content: space-around;\r\n  align-self: center;\r\n  margin-right: 3rem;\r\n}\r\n\r\n.nav-content li {\r\n  margin-left: 3rem;\r\n  font-size: 20px;\r\n}\r\n\r\n.nav-content li a {\r\n  text-decoration: none;\r\n  color: var(--bs-light);\r\n}\r\n\r\n li a:hover {\r\n  text-decoration: underline;\r\n  color: var(--bs-warning);\r\n}\r\n\r\n/* .header-content-nav button {\r\n  background-color: var(--bs-primary); \r\n  color: var(--bs-light);\r\n  cursor: pointer;\r\n  margin-top: 0.4rem;\r\n  border-radius: 90px;\r\n} */\r\n\r\nbutton {\r\n  margin-left: 1rem;\r\n  width: 8vw;\r\n  height: 3vw;\r\n}\r\n\r\n.sign-in {\r\n  margin-right: 1rem;\r\n  background: none;\r\n  border: none;\r\n}\r\n\r\n.sign-in i {\r\n  font-size: 50px;\r\n  color: var(--bs-light);\r\n}\r\n\r\n.sign-in i:hover {\r\n  font-size: 50px;\r\n  color: var(--bs-warning);\r\n}\r\n\r\n.home-title {\r\n  color: var(--bs-light);\r\n  text-align: left;\r\n  margin-left: 1rem;\r\n}\r\n\r\n.home-container {\r\n  margin-top: 3rem;\r\n  overflow-x: hidden;\r\n  margin-right: 0.5rem;\r\n  position: relative;\r\n  \r\n}\r\n\r\n.home-container h2 {\r\n  color: var(--bs-black);\r\n  text-align: center;\r\n  margin-top: 2.5rem;\r\n  text-transform: var(--bs-cyan);\r\n  background: linear-gradient(45deg, #c3fc3d, #2d8acc, #80cff0ee);\r\n    -webkit-background-clip: text;\r\n    background-clip: text;\r\n    color: transparent;\r\n    text-align: center;\r\n    font-size: 24px;\r\n    \r\n}\r\n\r\n\r\n.container-cards {\r\n  display: grid;\r\n  grid-template-columns: repeat(4, 1fr);\r\n  grid-template-rows: repeat(2, 1fr);\r\n  row-gap: 10px;\r\n  margin-top: 4rem;\r\n}\r\n\r\n\r\nform {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  position: absolute;\r\n  top: 5px;\r\n  right: 0;\r\n  margin: 2rem;\r\n}\r\n\r\n.search-input-container {\r\n  display: flex;\r\n  align-items: flex-start;\r\n  justify-content: space-around;\r\n}\r\n\r\n.search-input {\r\n  padding: 10px;\r\n  border: 1px solid #ccc;\r\n  border-radius: 4px;\r\n}\r\n\r\n.search-button,\r\n.comment-button {\r\n  background-color: var(--bs-primary);\r\n  color: var(--bs-light);\r\n  border: none;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n}\r\n\r\n.comment-button,.search-button:hover {\r\n  background-color: var(--bs-cyan);\r\n}\r\n\r\n.movie-content-container {\r\n  margin: 0.5rem;\r\n  border-radius: 11px;\r\n  box-shadow: 0 4px 8px rgba(50, 108, 184, 0.5);\r\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\r\n  cursor: pointer;\r\n}\r\n\r\n.movie-thumbnail {\r\n  background-size: contain;\r\n  z-index: 5;\r\n  border-radius: 10px;\r\n  text-align: center;\r\n  position: relative;\r\n}\r\n\r\n.overlay {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  background-color: rgba(62, 195, 243, 0.45);\r\n  opacity: 0;\r\n  transition: opacity 0.3s ease;\r\n  border-radius: 12px;\r\n}\r\n\r\n.movie-thumbnail:hover {\r\n  transform: scale(1.05);\r\n  box-shadow: 0 8px 16px rgba(53, 139, 210, 0.4);\r\n}\r\n\r\n.overlay:hover  {\r\n  opacity: 1;\r\n}\r\n\r\n.movie-content i {\r\n  color: var(--bs-white);\r\n  font-size: 25px;\r\n}\r\n\r\n.movie-content i:hover {\r\n  color: var(--bs-danger);\r\n}\r\n\r\n.movie-content {\r\n  padding: 0.7rem;\r\n  display: flex;\r\n  flex-direction: column;\r\n  margin: 0 0.5rem 0 0.5rem;\r\n}\r\n\r\n.comment-button {\r\n  align-self: flex-end;\r\n}\r\n\r\n.comment-button:hover {\r\n  background: var(--bs-secondary);\r\n}\r\n\r\n.movie-title {\r\n  display: flex;\r\n  justify-content: space-between;\r\n}\r\n\r\n\r\n\r\n.footer-copyright {\r\n  background:\r\n    linear-gradient(\r\n      to right,\r\n      var(--bs-white),\r\n      var(--bs-white),\r\n      var(--bs-cyan)\r\n    );\r\n  background-clip: text;\r\n  -webkit-background-clip: text;\r\n  color: transparent;\r\n  padding: 20px;\r\n  text-align: center;\r\n  align-self: flex-end;\r\n  flex-grow: 2;\r\n}\r\n"],"sourceRoot":""}]);
+
+@media (min-width: 375px) and (max-width: 567px) {
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .header-content-nav {
+    display: none;
+  }
+
+  .mobile-menu {
+    margin: 1rem 3rem 0 3rem;
+    font-size: 28px;
+  }
+
+  .container-cards {
+    display: flex;
+    flex-direction: column;
+  }
+
+  form {
+    margin: calc(7rem - 1.5rem) calc(5rem - 1.5rem) 0 0;
+    bottom: 0;
+    justify-content: center;
+  }
+
+  .search-button {
+    width: 18vw;
+    height: 9vw;
+  }
+
+  .home-container {
+    margin-top: 0;
+  }
+
+  .home-container h2 {
+    margin-bottom: 1rem;
+    font-size: 24px;
+  }
+
+  .comment-button {
+    display: none;
+  }
+
+  .comment-button1 {
+    background: none;
+    border: none;
+    align-self: flex-end;
+    margin-bottom: 2.3rem;
+  }
+
+  .comment-button1 i {
+    color: var(--bs-gray);
+  }
+
+  .comment-button1 i:hover {
+    color: var(--bs-cyan);
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 568px) and  (max-width: 768px) {
+  .container-cards {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .nav-content {
+    margin-right: 4rem;
+  }
+
+  button {
+    width: 9vw;
+    height: 4.5vw;
+  }
+
+  form {
+    margin: calc(3rem - 1.5rem) calc(5rem - 1.5rem) 0 0;
+    bottom: 0;
+    justify-content: center;
+  }
+
+  .home-container h2 {
+    margin-bottom: 1rem;
+    font-size: 24px;
+    text-align: left;
+  }
+
+  .comment-button {
+    width: 11vw;
+    height: 3.5vw;
+  }
+
+  .comment-button1 {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .search-button {
+    width: 9vw;
+    height: 4.5vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .comment-button1 {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .home-container h2 {
+    margin-right: 3rem;
+  }
+
+  .search-button {
+    position: relative;
+    top: 3px;
+  }
+}
+`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"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","sourcesContent":["\r\n@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');\r\n\r\n:root {\r\n  --bs-pink: #f15aa6;\r\n  --bs-red: #dc3545;\r\n  --bs-cyan: #0dcaf0;\r\n  --bs-black: #000000d7;\r\n  --bs-white: #fff;\r\n  --bs-gray: #6c757d;\r\n  --bs-gray-700: #495057;\r\n  --bs-gray-800: #343a40;\r\n  --bs-gray-900: #212529;\r\n  --bs-primary: #0d6efd;\r\n  --bs-secondary: #6c757d;\r\n  --bs-success: #155f3ce7;\r\n  --bs-info: #0dcaf0;\r\n  --bs-warning: #ffc107;\r\n  --bs-danger: #dc3545;\r\n  --bs-light: #f8f9fa;\r\n  --bs-dark: #212529;\r\n  --bs-secondary-text: #6c757d;\r\n  --bs-success-text: #146c43;\r\n  --bs-info-text: #5a8189;\r\n}\r\n\r\nbody {\r\n  margin: auto 0;\r\n  overflow-x: hidden;\r\n  position: relative;\r\n\r\n  /* background-color: var(--bs-gray-700); */\r\n  font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\nmain {\r\n  border-bottom: 2px solid var(--bs-cyan);\r\n  margin-top: 7rem;\r\n}\r\n\r\nmain::before {\r\n  content: '';\r\n  position: absolute;\r\n  z-index: 0;\r\n  pointer-events: none;\r\n  top: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  background: url(./asset/img/home__bg.jpg);\r\n  opacity: 0.2;\r\n}\r\n\r\nheader {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  background: var(--bs-cyan);\r\n  border-bottom: 2px solid var(--bs-cyan);\r\n  color: var(--bs-light);\r\n  padding: 0.5rem;\r\n  position: fixed;\r\n  z-index: 10;\r\n  width: 100%;\r\n  top: 0;\r\n}\r\n\r\n.header-content-logo {\r\n  display: flex;\r\n}\r\n\r\n.logo {\r\n  background: url('./asset/img/logo.jpg') no-repeat;\r\n  background-size: cover;\r\n  width: 100px;\r\n  height: 100px;\r\n  border-radius: 50px;\r\n}\r\n\r\n.nav-content {\r\n  display: flex;\r\n  list-style: none;\r\n  margin-right: 8rem;\r\n}\r\n\r\n.header-content-nav {\r\n  display: flex;\r\n  justify-content: space-around;\r\n  align-self: center;\r\n  margin-right: 3rem;\r\n}\r\n\r\n.nav-content li {\r\n  margin-left: 3rem;\r\n  font-size: 20px;\r\n}\r\n\r\n.nav-content li a {\r\n  text-decoration: none;\r\n  color: var(--bs-light);\r\n}\r\n\r\nli a:hover {\r\n  text-decoration: underline;\r\n  color: var(--bs-warning);\r\n}\r\n\r\n/* .header-content-nav button {\r\n  background-color: var(--bs-primary);\r\n  color: var(--bs-light);\r\n  cursor: pointer;\r\n  margin-top: 0.4rem;\r\n  border-radius: 90px;\r\n} */\r\n\r\nbutton {\r\n  margin-left: 1rem;\r\n  width: 6vw;\r\n  height: 2vw;\r\n}\r\n\r\n.home-title {\r\n  color: var(--bs-light);\r\n  text-align: left;\r\n  margin-left: 1rem;\r\n}\r\n\r\n.home-container {\r\n  margin-top: 3rem;\r\n  overflow-x: hidden;\r\n  margin-right: 0.5rem;\r\n  position: relative;\r\n}\r\n\r\n.home-container h2 {\r\n  text-align: center;\r\n  margin-top: 2.5rem;\r\n  background: linear-gradient(45deg, #66fc3d, #46c4d2, #21a7e0ee);\r\n  -webkit-background-clip: text;\r\n  color: transparent;\r\n  background-clip: text;\r\n  font-size: 27px;\r\n}\r\n\r\n.sign-in {\r\n  margin-right: 1rem;\r\n  background: none;\r\n  border: none;\r\n}\r\n\r\n.sign-in i {\r\n  font-size: 50px;\r\n  color: var(--bs-light);\r\n}\r\n\r\n.overlay i {\r\n  position: absolute;\r\n  bottom: 45%;\r\n  font-size: 50px;\r\n  color: var(--bs-light);\r\n}\r\n\r\n.movie-content i {\r\n  color: var(--bs-white);\r\n  font-size: 25px;\r\n}\r\n\r\n.sign-in i:hover {\r\n  font-size: 50px;\r\n  color: var(--bs-warning);\r\n}\r\n\r\n.container-cards {\r\n  display: grid;\r\n  grid-template-columns: repeat(4, 1fr);\r\n  grid-template-rows: repeat(2, 1fr);\r\n  row-gap: 10px;\r\n  margin-top: 4rem;\r\n}\r\n\r\nform {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  position: absolute;\r\n  top: 5px;\r\n  right: 0;\r\n  margin: 2rem;\r\n  font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\n.search-button {\r\n  width: 8vw;\r\n  height: 2.5vw;\r\n}\r\n\r\n.search-input-container {\r\n  display: flex;\r\n  align-items: flex-start;\r\n  justify-content: space-around;\r\n}\r\n\r\n.search-input {\r\n  padding: 10px;\r\n  border: 1px solid #ccc;\r\n  border-radius: 4px;\r\n}\r\n\r\n.search-button,\r\n.comment-button {\r\n  background-color: var(--bs-primary);\r\n  color: var(--bs-light);\r\n  border: none;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  font-size: 13px;\r\n  font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\n.comment-button,\r\n.search-button:hover {\r\n  background-color: var(--bs-cyan);\r\n}\r\n\r\n.movie-content-container {\r\n  margin: 0.5rem;\r\n  border-radius: 11px;\r\n  box-shadow: 0 4px 8px rgba(50, 108, 184, 0.5);\r\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\r\n  cursor: pointer;\r\n  font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\n.movie-thumbnail {\r\n  background-size: contain;\r\n  z-index: 5;\r\n  border-radius: 10px;\r\n  text-align: center;\r\n  position: relative;\r\n}\r\n\r\n.movie-content {\r\n  padding: 3rem;\r\n  position: relative;\r\n}\r\n\r\n.overlay {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  background-color: rgba(62, 195, 243, 0.45);\r\n  opacity: 0;\r\n  transition: opacity 0.3s ease;\r\n  border-radius: 12px;\r\n}\r\n\r\n.overlay i:hover {\r\n  color: var(--bs-warning);\r\n}\r\n\r\n.overlay:hover {\r\n  opacity: 1;\r\n}\r\n\r\n.movie-content i:hover {\r\n  color: var(--bs-danger);\r\n}\r\n\r\n.movie-content h3 {\r\n  padding-bottom: 1rem;\r\n  position: absolute;\r\n  top: 0;\r\n  text-align: center;\r\n  color: var(--bs-red);\r\n}\r\n\r\n.movie-thumbnail:hover {\r\n  transform: scale(1.05);\r\n  box-shadow: 0 8px 16px rgba(53, 139, 210, 0.4);\r\n}\r\n\r\n.movie-comment {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  position: relative;\r\n  top: 1.5rem;\r\n}\r\n\r\n.comment-button {\r\n  align-self: flex-end;\r\n}\r\n\r\n.comment-button:hover {\r\n  background: var(--bs-secondary);\r\n}\r\n\r\n.footer-copyright {\r\n  font-family: 'Montserrat', sans-serif;\r\n  background:\r\n    linear-gradient(\r\n      to right,\r\n      var(--bs-white),\r\n      var(--bs-warning),\r\n      var(--bs-cyan)\r\n    );\r\n  background-clip: text;\r\n  -webkit-background-clip: text;\r\n  color: transparent;\r\n  padding: 20px;\r\n  text-align: center;\r\n  font-weight: 700;\r\n}\r\n\r\n@media (min-width: 375px) and (max-width: 567px) {\r\n  .logo {\r\n    width: 60px;\r\n    height: 60px;\r\n  }\r\n\r\n  .header-content-nav {\r\n    display: none;\r\n  }\r\n\r\n  .mobile-menu {\r\n    margin: 1rem 3rem 0 3rem;\r\n    font-size: 28px;\r\n  }\r\n\r\n  .container-cards {\r\n    display: flex;\r\n    flex-direction: column;\r\n  }\r\n\r\n  form {\r\n    margin: calc(7rem - 1.5rem) calc(5rem - 1.5rem) 0 0;\r\n    bottom: 0;\r\n    justify-content: center;\r\n  }\r\n\r\n  .search-button {\r\n    width: 18vw;\r\n    height: 9vw;\r\n  }\r\n\r\n  .home-container {\r\n    margin-top: 0;\r\n  }\r\n\r\n  .home-container h2 {\r\n    margin-bottom: 1rem;\r\n    font-size: 24px;\r\n  }\r\n\r\n  .comment-button {\r\n    display: none;\r\n  }\r\n\r\n  .comment-button1 {\r\n    background: none;\r\n    border: none;\r\n    align-self: flex-end;\r\n    margin-bottom: 2.3rem;\r\n  }\r\n\r\n  .comment-button1 i {\r\n    color: var(--bs-gray);\r\n  }\r\n\r\n  .comment-button1 i:hover {\r\n    color: var(--bs-cyan);\r\n    font-size: 28px;\r\n  }\r\n}\r\n\r\n@media (min-width: 568px) and  (max-width: 768px) {\r\n  .container-cards {\r\n    grid-template-columns: repeat(3, 1fr);\r\n    grid-template-rows: repeat(2, 1fr);\r\n  }\r\n\r\n  .logo {\r\n    width: 80px;\r\n    height: 80px;\r\n  }\r\n\r\n  .nav-content {\r\n    margin-right: 4rem;\r\n  }\r\n\r\n  button {\r\n    width: 9vw;\r\n    height: 4.5vw;\r\n  }\r\n\r\n  form {\r\n    margin: calc(3rem - 1.5rem) calc(5rem - 1.5rem) 0 0;\r\n    bottom: 0;\r\n    justify-content: center;\r\n  }\r\n\r\n  .home-container h2 {\r\n    margin-bottom: 1rem;\r\n    font-size: 24px;\r\n    text-align: left;\r\n  }\r\n\r\n  .comment-button {\r\n    width: 11vw;\r\n    height: 3.5vw;\r\n  }\r\n\r\n  .comment-button1 {\r\n    display: none;\r\n  }\r\n\r\n  .mobile-menu {\r\n    display: none;\r\n  }\r\n\r\n  .search-button {\r\n    width: 9vw;\r\n    height: 4.5vw;\r\n  }\r\n}\r\n\r\n@media (min-width: 1024px) {\r\n  .comment-button1 {\r\n    display: none;\r\n  }\r\n\r\n  .mobile-menu {\r\n    display: none;\r\n  }\r\n\r\n  .home-container h2 {\r\n    margin-right: 3rem;\r\n  }\r\n\r\n  .search-button {\r\n    position: relative;\r\n    top: 3px;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1250,8 +1397,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
 /* harmony import */ var font_awesome_css_font_awesome_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! font-awesome/css/font-awesome.min.css */ "./node_modules/font-awesome/css/font-awesome.min.css");
 /* harmony import */ var _modules_display_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/display.js */ "./src/modules/display.js");
-// import _ from 'lodash';
 
+// eslint-disable-next-line import/extensions
 
 
 window.addEventListener('DOMContentLoaded', function () {
