@@ -1,4 +1,4 @@
-import fetchShows from './fetchShows.js';
+import { fetchShows, fetchShowsDetails } from './fetchShows.js';
 
 const movieContainer = document.querySelector('.container-cards');
 const url = 'https://api.tvmaze.com/shows';
