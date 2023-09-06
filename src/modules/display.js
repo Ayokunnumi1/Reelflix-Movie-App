@@ -25,8 +25,12 @@ export const displayShows = async () => {
                         <div class="overlay"> <i class="fa fa-play"></i></div>
                     </div>
                     <div class="movie-content">
-                        <h3 class="movie-title">${filterShow.title} <i class="fa fa-heart"></i> </h3>
+                        <h3 class="movie-title">${filterShow.title} </h3>
+                        <div class="movie-comment">
+                        <i class="fa fa-heart"></i> 
                         <button class="comment-button">Comment</button>
+                        <button class="comment-button1">  <i class="fa fa-comment"></i></button>
+                    </div>
                     </div>
                   
                 </div>`;
