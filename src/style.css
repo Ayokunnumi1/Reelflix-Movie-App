@@ -175,6 +175,7 @@ button {
   grid-template-rows: repeat(2, 1fr);
   row-gap: 10px;
   margin-top: 4rem;
+  position: relative;
 }
 
 form {
@@ -314,11 +315,25 @@ form {
 
 .popUp-modal {
   display: none;
-  width: 100%;
-  height: 250px;
-  z-index: 1000;
   border: 3px solid red;
+  flex-direction: column;
 }
+
+.comment-form {
+  border: 3px solid green;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  position: relative;
+}
+
+.comment-container {
+  border: 3px solid brown;
+  width: 250px;
+  overflow-y: scroll;
+}
+
+
 
 @media (min-width: 375px) and (max-width: 567px) {
   .logo {
@@ -379,6 +394,14 @@ form {
     color: var(--bs-cyan);
     font-size: 28px;
   }
+  .popUp-modal {
+    border: solid red;
+    position: absolute;
+    bottom: 0;
+    background: var(--bs-red);
+    z-index: 12;
+    overflow: hidden
+  }
 }
 
 @media (min-width: 568px) and (max-width: 768px) {
@@ -430,6 +453,14 @@ form {
     width: 9vw;
     height: 4.5vw;
   }
+  .popUp-modal {
+    border: solid red;
+    position: absolute;
+    bottom: 0;
+    background: var(--bs-red);
+    z-index: 12;
+    overflow: hidden
+  }
 }
 
 @media (min-width: 1024px) {
@@ -449,4 +480,125 @@ form {
     position: relative;
     top: 3px;
   }
+
+  .movie-content-container {
+    position: relative;
+  }
+
+  .popUp-modal {
+    border: 1px solid #ccc;
+    position: fixed;
+    background: linear-gradient(to bottom, #cfe7f8, #4096b0);
+    z-index: 11;
+    top: 80%;
+    left: 50%;
+    width: 70vw;
+    height: 40vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-left: 7rem;
+    margin-top: 6.2rem;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(152, 220, 222, 0.5);
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .popUp-modal::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 15px;
+  }
+
+  .popUp-modal::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #cfe7f8, #4096b0);
+    border-radius: 20px;
+  }
+
+  .popUp-modal::-webkit-scrollbar-thumb:hover {
+    opacity: 1;
+  }
+  
+  .popUp-modal .close-button {
+    position: absolute;
+    top: 1rem;
+    right: -1rem;
+    font-size: 1.5rem;
+    color: #7cacac;
+    background: none;
+    border: none;
+  }
+
+  .m-title  {
+    text-align: center;
+      font-size: 27px;
+      color: var(--bs-warning);
+    }
+  
+
+  .close-button :hover {
+    color: var(--bs-warning);
+  }
+
+  .imgdes {
+    display: flex;
+    margin: 2rem;
+  }
+
+  .para {
+    text-align: justify;
+    margin: 2rem 0 0 -3rem;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    
+  }
+  .modal-content {
+   display: flex;
+  }
+
+
+  .descriptions {
+    display: flex;
+    justify-content: space-evenly;
+    left: 2rem;
+    position: relative;
+    bottom: 40%; 
+    align-items: flex-end;
+  }
+
+  .descriptions  p {
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 0.5rem;
+    text-decoration: underline;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--bs-warning);
+  }
+
+  .commentcontainer {
+   display: flex;
+   justify-content: center;
+   margin-right: 3rem;
+  }
+
+  .comment-form {
+ text-align: center;
+ position: relative;
+ left: 30%;
+ background-color: #a6caf0;
+ color: white;
+ padding: 10px 20px;
+ border: none;
+ border-radius: 4px;
+ font-size: 1rem;
+ 
+  }
+
+  .comment-form input[type="text"],
+.comment-form textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
 }
