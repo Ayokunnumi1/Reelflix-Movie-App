@@ -29,7 +29,14 @@ const displayPopUp = async (buttonId) => {
                 <p>${showPopObject.genres}</p>;
                 <p>${showPopObject.language}</p>;
                 <p>${showPopObject.rating}</p>
-                <div class="close-button">&#10006;</div>`;
+                <div class="close-button">&#10006;</div>
+                 <div class="comment-container"></div>
+                <form action="" class="comment-form">
+                    <input type="text" name="text" id="input-text">
+                    <textarea name="text" id="comment-text" cols="30" rows="10"></textarea>
+                    <button type="submit" class="submit-button">Submit</button>
+                </form>`;
+
     popUpModal.innerHTML = popUpElement;
     // console.log(popUpElement);
     return showPopObject;
@@ -81,7 +88,7 @@ export const displayShows = async () => {
         const buttonId = parseInt(e.target.dataset.index, 10);
         // console.log(buttonId);
         displayPopUp(buttonId);
-        popUpModal.style.display = 'block';
+        popUpModal.style.display = 'flex';
       });
     });
     const commentButton1 = document.querySelectorAll('.comment-button1');
@@ -92,7 +99,7 @@ export const displayShows = async () => {
         const buttonId = parseInt(e.target.dataset.index1, 10);
         // console.log(buttonId);
         displayPopUp(buttonId);
-        popUpModal.style.display = 'block';
+        popUpModal.style.display = 'flex';
       });
     });
 

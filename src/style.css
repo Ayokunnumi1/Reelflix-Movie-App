@@ -314,10 +314,22 @@ form {
 
 .popUp-modal {
   display: none;
-  width: 100%;
-  height: 250px;
-  z-index: 1000;
   border: 3px solid red;
+  flex-direction: column;
+}
+
+.comment-form {
+  border: 3px solid green;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  position: relative;
+}
+
+.comment-container {
+  border: 3px solid brown;
+  width: 250px;
+  overflow-y: scroll;
 }
 
 @media (min-width: 375px) and (max-width: 567px) {
