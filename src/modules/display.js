@@ -35,15 +35,17 @@ const displayPopUp = async (buttonId) => {
                 <p>${showPopObject.language}</p>;
                 <p>${showPopObject.rating}</p>
                 </div>
-                
                 </div>
-               
+
+
                  <div class="commentcontainer">
+                <h5>Your comment ...</h5>
+                 
                  <p class="comment-container"></p>
                  </div>
                 <form action="" class="comment-form">
                     <input type="text" name="text" id="input-text">
-                    <textarea name="text" id="comment-text" cols="30" rows="10"></textarea>
+                    <textarea name="text" id="comment-text" cols="30" rows="10" placeholder="Your comment here..." ></textarea>
                     <button type="submit" class="submit-button">Submit</button>
                 </form> `;
                

@@ -103,13 +103,6 @@ li a:hover {
   color: var(--bs-warning);
 }
 
-/* .header-content-nav button {
-  background-color: var(--bs-primary);
-  color: var(--bs-light);
-  cursor: pointer;
-  margin-top: 0.4rem;
-  border-radius: 90px;
-} */
 
 button {
   margin-left: 1rem;
@@ -205,6 +198,12 @@ form {
   border-radius: 4px;
 }
 
+.comment-button {
+  width: 11vw;
+  height: 3vw;
+ 
+}
+
 .search-button,
 .comment-button {
   background-color: var(--bs-primary);
@@ -212,7 +211,7 @@ form {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 12px;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -335,7 +334,7 @@ form {
 
 
 
-@media (min-width: 375px) and (max-width: 567px) {
+@media (min-width: 375px) and (max-width: 667px) {
   .logo {
     width: 60px;
     height: 60px;
@@ -363,7 +362,7 @@ form {
 
   .search-button {
     width: 18vw;
-    height: 9vw;
+    height: calc(6vw + 6px);
   }
 
   .home-container {
@@ -402,9 +401,160 @@ form {
     z-index: 12;
     overflow: hidden
   }
+
+    .movie-content-container {
+    position: relative;
+  }
+
+  .popUp-modal {
+    border: 1px solid #ccc;
+    position: fixed;
+    background: linear-gradient(to bottom, #cfe7f8, #4096b0);
+    z-index: 11;
+    top: 80%;
+   width: 90%; /* Adjust the width as needed */
+   height: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 4.5rem;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(152, 220, 222, 0.5);
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .popUp-modal::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 15px;
+  }
+
+  .popUp-modal::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #cfe7f8, #4096b0);
+    border-radius: 20px;
+  }
+
+  .popUp-modal::-webkit-scrollbar-thumb:hover {
+    opacity: 1;
+  }
+  
+  .popUp-modal .close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.2rem;
+    color: #7cacac;
+    background: none;
+    border: none;
+  }
+
+  .m-title  {
+    text-align: center;
+      font-size: 25px;
+      color: var(--bs-warning);
+    }
+  
+
+  .close-button :hover {
+    color: var(--bs-warning);
+  }
+
+  .imgdes {
+    display: flex;
+    margin: 1rem;
+    flex-direction: column;
+  }
+
+  .imgdes img {
+    width: 250px;
+    height: 300px;
+    align-self: center;
+  }
+
+  .imgdes .para {
+    text-align: justify;
+    margin: 1rem 0 0 -3rem;
+    font-family: 'Montserrat', sans-serif;
+    width: 90%;
+    font-size: 10px;
+  }
+
+  .modal-content {
+   display: flex;
+  }
+
+  .descriptions {
+    display: flex;;
+    position: relative;
+    bottom: 50%; 
+    align-items:center
+  }
+
+  .descriptions  p {
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 0.7rem;
+    text-decoration: underline;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--bs-success-text);
+  }
+
+  .commentcontainer {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-left: 1rem;
+   border: none;
+  }
+
+  .commentcontainer h5 {
+    font-size: 13px;
+    margin-right: 2rem;
+  }
+
+  .comment-form {
+ text-align: center;
+ position: relative;
+ left: 23%;
+ top: -10%;
+ background-color: #a6caf0;
+ color: white;
+ padding: 10px 20px;
+ border: none;
+ border-radius: 4px;
+ font-size: 1rem;
+ 
+  }
+
+  .comment-form input[type="text"],
+.comment-form textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
-@media (min-width: 568px) and (max-width: 768px) {
+.comment-form textarea{
+  height: 10vw;
+}
+
+.submit-button {
+  background-color: var(--bs-info);
+  color: var(--bs-dark);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  width: 19vw;
+  height: 7vw;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+}
+
+
+@media (min-width: 668px) and (max-width: 1020px) {
   .container-cards {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -426,18 +576,18 @@ form {
 
   form {
     margin: calc(3rem - 1.5rem) calc(5rem - 1.5rem) 0 0;
-    bottom: 0;
-    justify-content: center;
+  
+    margin-top: 4rem;
   }
 
   .home-container h2 {
     margin-bottom: 1rem;
     font-size: 24px;
-    text-align: left;
+    text-align: center;
   }
 
   .comment-button {
-    width: 11vw;
+    width: 10vw;
     height: 3.5vw;
   }
 
@@ -454,16 +604,155 @@ form {
     height: 4.5vw;
   }
   .popUp-modal {
-    border: solid red;
-    position: absolute;
-    bottom: 0;
-    background: var(--bs-red);
-    z-index: 12;
-    overflow: hidden
+    border: 1px solid #ccc;
+    position: fixed;
+    background: linear-gradient(to bottom, #cfe7f8, #4096b0);
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    width: 90vw; 
+    height: 70vw;
+    overflow-y: scroll;
+  overflow-x: hidden;
+  margin-top: 5.5rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(152, 220, 222, 0.5);
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;; 
+   
   }
+
+  .popUp-modal::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 15px;
+  }
+
+  .popUp-modal::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #cfe7f8, #4096b0);
+    border-radius: 20px;
+  }
+
+  .popUp-modal::-webkit-scrollbar-thumb:hover {
+    opacity: 1;
+  }
+  
+  .popUp-modal .close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.2rem;
+    color: #7cacac;
+    background: none;
+    border: none;
+  }
+
+  .m-title  {
+    text-align: center;
+      font-size: 25px;
+      color: var(--bs-warning);
+    }
+  
+
+  .close-button :hover {
+    color: var(--bs-warning);
+  }
+
+  .imgdes {
+    display: flex;
+    margin: 1rem;
+    flex-direction: column;
+  }
+
+  .imgdes img {
+    width: 250px;
+    height: 300px;
+    align-self: center;
+  }
+
+  .imgdes .para {
+    text-align: justify;
+    margin: 1rem 0 0 -3rem;
+    font-family: 'Montserrat', sans-serif;
+    width: 90%;
+    font-size: 10px;
+  }
+
+  .modal-content {
+   display: flex;
+  }
+
+  .descriptions {
+    display: flex;;
+    position: relative;
+    bottom: 50%; 
+    align-items:center
+  }
+
+  .descriptions  p {
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 0.7rem;
+    text-decoration: underline;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--bs-success-text);
+  }
+
+  .commentcontainer {
+   display: flex;
+   margin-left: 4rem;
+   align-items: center;
+   border: none;
+  }
+
+  .commentcontainer h5 {
+    font-size: 13px;
+    margin-right: 2rem;
+  }
+
+  .comment-form {
+ text-align: center;
+ position: relative;
+ left: 25%;
+ top: -5%;
+ background-color: #a6caf0;
+ color: white;
+ padding: 10px 20px;
+ border: none;
+ border-radius: 4px;
+ font-size: 1rem;
+ width: 40vw;
+  }
+
+  .comment-form input[type="text"],
+.comment-form textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
-@media (min-width: 1024px) {
+.comment-form textarea{
+  height: 10vw;
+}
+
+.submit-button {
+  background-color: var(--bs-info);
+  color: var(--bs-dark);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  width: 19vw;
+  height: 7vw;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+}
+
+
+@media (min-width: 1021px) {
   .comment-button1 {
     display: none;
   }
@@ -485,6 +774,8 @@ form {
     position: relative;
   }
 
+
+ 
   .popUp-modal {
     border: 1px solid #ccc;
     position: fixed;
@@ -578,18 +869,25 @@ form {
    display: flex;
    justify-content: center;
    margin-right: 3rem;
+   border: none;
+  }
+
+  .commentcontainer h5 {
+    font-size: 16px;
+    margin-right: 2rem;
   }
 
   .comment-form {
  text-align: center;
  position: relative;
- left: 30%;
+ left: 25%;
  background-color: #a6caf0;
  color: white;
  padding: 10px 20px;
  border: none;
  border-radius: 4px;
  font-size: 1rem;
+ width: 30vw;
  
   }
 
@@ -601,4 +899,19 @@ form {
   border-radius: 4px;
   font-size: 1rem;
 }
+
+.comment-form textarea{
+  height: 3.5vw;
 }
+
+.submit-button {
+  background-color: var(--bs-info);
+  color: var(--bs-dark);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+}
+
