@@ -29,10 +29,7 @@ const displayPopUp = async (buttonId) => {
                 <p>${showPopObject.rating}</p>
                 <div class="close-button">&#10006;</div>`;
     popUpModal.innerHTML = popUpElement;
-    const closeButton = document.querySelector('.close-button');
-    closeButton.addEventListener('click', () => {
-      popUpModal.style.display = 'none';
-    });
+   
     
     return showPopObject;
   } catch (error) {
