@@ -48,7 +48,6 @@ const displayPopUp = async (buttonId) => {
                     <textarea name="text" id="comment-text" cols="30" rows="10" placeholder="Your comment here..." ></textarea>
                     <button type="submit" class="submit-button">Submit</button>
                 </form> `;
-               
 
     popUpModal.innerHTML = popUpElement;
     const closeButton = document.querySelector('.close-button');
@@ -99,15 +98,14 @@ export const displayShows = async () => {
     }).join('');
 
     const popupPosition = (button, popUpModal, e) => {
-    const commentClick = button.getBoundingClientRect();
-    
+      const commentClick = button.getBoundingClientRect();
+
       const left = e.clientX - commentClick.left;
       const top = e.clientY - commentClick.top;
 
-      popUpModal.style.left = left + 'px';
-      popUpModal.style.top = top + 'px';
+      popUpModal.style.left = `${left}px`;
+      popUpModal.style.top = `${top}px`;
     };
-
 
     movieContainer.insertAdjacentHTML('beforeend', createShowElement);
     const commentButton = document.querySelectorAll('.comment-button');
@@ -129,7 +127,6 @@ export const displayShows = async () => {
     commentButton1.forEach((button) => {
       button.addEventListener('click', (e) => {
         // console.log('clicked');
-
 
         const buttonId = parseInt(e.target.dataset.index1, 10);
         // console.log(buttonId);

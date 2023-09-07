@@ -103,7 +103,6 @@ li a:hover {
   color: var(--bs-warning);
 }
 
-
 button {
   margin-left: 1rem;
   width: 6vw;
@@ -201,7 +200,7 @@ form {
 .comment-button {
   width: 11vw;
   height: 3vw;
- 
+  align-self: flex-end;
 }
 
 .search-button,
@@ -286,10 +285,6 @@ form {
   top: 1.5rem;
 }
 
-.comment-button {
-  align-self: flex-end;
-}
-
 .comment-button:hover {
   background: var(--bs-secondary);
 }
@@ -331,8 +326,6 @@ form {
   width: 250px;
   overflow-y: scroll;
 }
-
-
 
 @media (min-width: 375px) and (max-width: 667px) {
   .logo {
@@ -393,16 +386,8 @@ form {
     color: var(--bs-cyan);
     font-size: 28px;
   }
-  .popUp-modal {
-    border: solid red;
-    position: absolute;
-    bottom: 0;
-    background: var(--bs-red);
-    z-index: 12;
-    overflow: hidden
-  }
 
-    .movie-content-container {
+  .movie-content-container {
     position: relative;
   }
 
@@ -412,13 +397,13 @@ form {
     background: linear-gradient(to bottom, #cfe7f8, #4096b0);
     z-index: 11;
     top: 80%;
-   width: 90%; /* Adjust the width as needed */
-   height: auto;
+    width: 90%; /* Adjust the width as needed */
+    height: auto;
     overflow-y: scroll;
     overflow-x: hidden;
     margin-top: 4.5rem;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(152, 220, 222, 0.5);
+    box-shadow: 0 0 10px rgba(152, 220, 222, 0.5);
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
   }
@@ -436,7 +421,7 @@ form {
   .popUp-modal::-webkit-scrollbar-thumb:hover {
     opacity: 1;
   }
-  
+
   .popUp-modal .close-button {
     position: absolute;
     top: 1rem;
@@ -447,12 +432,11 @@ form {
     border: none;
   }
 
-  .m-title  {
+  .m-title {
     text-align: center;
-      font-size: 25px;
-      color: var(--bs-warning);
-    }
-  
+    font-size: 25px;
+    color: var(--bs-warning);
+  }
 
   .close-button :hover {
     color: var(--bs-warning);
@@ -479,17 +463,17 @@ form {
   }
 
   .modal-content {
-   display: flex;
+    display: flex;
   }
 
   .descriptions {
-    display: flex;;
+    display: flex;
     position: relative;
-    bottom: 50%; 
-    align-items:center
+    bottom: 50%;
+    align-items: center;
   }
 
-  .descriptions  p {
+  .descriptions p {
     font-family: 'Montserrat', sans-serif;
     padding-left: 0.7rem;
     text-decoration: underline;
@@ -499,11 +483,11 @@ form {
   }
 
   .commentcontainer {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   margin-left: 1rem;
-   border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1rem;
+    border: none;
   }
 
   .commentcontainer h5 {
@@ -512,47 +496,43 @@ form {
   }
 
   .comment-form {
- text-align: center;
- position: relative;
- left: 23%;
- top: -10%;
- background-color: #a6caf0;
- color: white;
- padding: 10px 20px;
- border: none;
- border-radius: 4px;
- font-size: 1rem;
- 
+    text-align: center;
+    position: relative;
+    left: 23%;
+    top: -10%;
+    background-color: #a6caf0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
   }
 
   .comment-form input[type="text"],
-.comment-form textarea {
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
+  .comment-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+  .comment-form textarea {
+    height: 10vw;
+  }
+
+  .submit-button {
+    background-color: var(--bs-info);
+    color: var(--bs-dark);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    width: 19vw;
+    height: 7vw;
+    font-family: 'Montserrat', sans-serif;
+  }
 }
-
-.comment-form textarea{
-  height: 10vw;
-}
-
-.submit-button {
-  background-color: var(--bs-info);
-  color: var(--bs-dark);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 15px;
-  width: 19vw;
-  height: 7vw;
-  font-family: 'Montserrat', sans-serif;
-
-}
-
-}
-
 
 @media (min-width: 668px) and (max-width: 1020px) {
   .container-cards {
@@ -576,7 +556,6 @@ form {
 
   form {
     margin: calc(3rem - 1.5rem) calc(5rem - 1.5rem) 0 0;
-  
     margin-top: 4rem;
   }
 
@@ -603,6 +582,7 @@ form {
     width: 9vw;
     height: 4.5vw;
   }
+
   .popUp-modal {
     border: 1px solid #ccc;
     position: fixed;
@@ -610,16 +590,15 @@ form {
     z-index: 10;
     top: 50%;
     left: 50%;
-    width: 90vw; 
+    width: 90vw;
     height: 70vw;
     overflow-y: scroll;
-  overflow-x: hidden;
-  margin-top: 5.5rem;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(152, 220, 222, 0.5);
-  cursor: pointer;
-  font-family: 'Montserrat', sans-serif;; 
-   
+    overflow-x: hidden;
+    margin-top: 5.5rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(152, 220, 222, 0.5);
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
   }
 
   .popUp-modal::-webkit-scrollbar {
@@ -635,7 +614,7 @@ form {
   .popUp-modal::-webkit-scrollbar-thumb:hover {
     opacity: 1;
   }
-  
+
   .popUp-modal .close-button {
     position: absolute;
     top: 1rem;
@@ -646,12 +625,11 @@ form {
     border: none;
   }
 
-  .m-title  {
+  .m-title {
     text-align: center;
-      font-size: 25px;
-      color: var(--bs-warning);
-    }
-  
+    font-size: 25px;
+    color: var(--bs-warning);
+  }
 
   .close-button :hover {
     color: var(--bs-warning);
@@ -678,17 +656,17 @@ form {
   }
 
   .modal-content {
-   display: flex;
+    display: flex;
   }
 
   .descriptions {
-    display: flex;;
+    display: flex;
     position: relative;
-    bottom: 50%; 
-    align-items:center
+    bottom: 50%;
+    align-items: center;
   }
 
-  .descriptions  p {
+  .descriptions p {
     font-family: 'Montserrat', sans-serif;
     padding-left: 0.7rem;
     text-decoration: underline;
@@ -698,10 +676,10 @@ form {
   }
 
   .commentcontainer {
-   display: flex;
-   margin-left: 4rem;
-   align-items: center;
-   border: none;
+    display: flex;
+    margin-left: 4rem;
+    align-items: center;
+    border: none;
   }
 
   .commentcontainer h5 {
@@ -710,47 +688,44 @@ form {
   }
 
   .comment-form {
- text-align: center;
- position: relative;
- left: 25%;
- top: -5%;
- background-color: #a6caf0;
- color: white;
- padding: 10px 20px;
- border: none;
- border-radius: 4px;
- font-size: 1rem;
- width: 40vw;
+    text-align: center;
+    position: relative;
+    left: 25%;
+    top: -5%;
+    background-color: #a6caf0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 40vw;
   }
 
   .comment-form input[type="text"],
-.comment-form textarea {
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
+  .comment-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+  .comment-form textarea {
+    height: 10vw;
+  }
+
+  .submit-button {
+    background-color: var(--bs-info);
+    color: var(--bs-dark);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    width: 19vw;
+    height: 7vw;
+    font-family: 'Montserrat', sans-serif;
+  }
 }
-
-.comment-form textarea{
-  height: 10vw;
-}
-
-.submit-button {
-  background-color: var(--bs-info);
-  color: var(--bs-dark);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 15px;
-  width: 19vw;
-  height: 7vw;
-  font-family: 'Montserrat', sans-serif;
-
-}
-
-}
-
 
 @media (min-width: 1021px) {
   .comment-button1 {
@@ -774,8 +749,6 @@ form {
     position: relative;
   }
 
-
- 
   .popUp-modal {
     border: 1px solid #ccc;
     position: fixed;
@@ -790,7 +763,7 @@ form {
     margin-left: 7rem;
     margin-top: 6.2rem;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(152, 220, 222, 0.5);
+    box-shadow: 0 0 10px rgba(152, 220, 222, 0.5);
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
   }
@@ -808,7 +781,7 @@ form {
   .popUp-modal::-webkit-scrollbar-thumb:hover {
     opacity: 1;
   }
-  
+
   .popUp-modal .close-button {
     position: absolute;
     top: 1rem;
@@ -819,12 +792,11 @@ form {
     border: none;
   }
 
-  .m-title  {
+  .m-title {
     text-align: center;
-      font-size: 27px;
-      color: var(--bs-warning);
-    }
-  
+    font-size: 27px;
+    color: var(--bs-warning);
+  }
 
   .close-button :hover {
     color: var(--bs-warning);
@@ -840,23 +812,22 @@ form {
     margin: 2rem 0 0 -3rem;
     font-family: 'Montserrat', sans-serif;
     width: 100%;
-    
-  }
-  .modal-content {
-   display: flex;
   }
 
+  .modal-content {
+    display: flex;
+  }
 
   .descriptions {
     display: flex;
     justify-content: space-evenly;
     left: 2rem;
     position: relative;
-    bottom: 40%; 
+    bottom: 40%;
     align-items: flex-end;
   }
 
-  .descriptions  p {
+  .descriptions p {
     font-family: 'Montserrat', sans-serif;
     padding-left: 0.5rem;
     text-decoration: underline;
@@ -866,10 +837,10 @@ form {
   }
 
   .commentcontainer {
-   display: flex;
-   justify-content: center;
-   margin-right: 3rem;
-   border: none;
+    display: flex;
+    justify-content: center;
+    margin-right: 3rem;
+    border: none;
   }
 
   .commentcontainer h5 {
@@ -878,40 +849,38 @@ form {
   }
 
   .comment-form {
- text-align: center;
- position: relative;
- left: 25%;
- background-color: #a6caf0;
- color: white;
- padding: 10px 20px;
- border: none;
- border-radius: 4px;
- font-size: 1rem;
- width: 30vw;
- 
+    text-align: center;
+    position: relative;
+    left: 25%;
+    background-color: #a6caf0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 30vw;
   }
 
   .comment-form input[type="text"],
-.comment-form textarea {
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-}
+  .comment-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
 
-.comment-form textarea{
-  height: 3.5vw;
-}
+  .comment-form textarea {
+    height: 3.5vw;
+  }
 
-.submit-button {
-  background-color: var(--bs-info);
-  color: var(--bs-dark);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 15px;
-  font-family: 'Montserrat', sans-serif;
+  .submit-button {
+    background-color: var(--bs-info);
+    color: var(--bs-dark);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+  }
 }
-}
-
