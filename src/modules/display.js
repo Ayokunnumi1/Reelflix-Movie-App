@@ -38,6 +38,11 @@ const displayPopUp = async (buttonId) => {
                 </form>`;
 
     popUpModal.innerHTML = popUpElement;
+    const closeButton = document.querySelector('.close-button');
+    closeButton.addEventListener('click', () => {
+      popUpModal.style.display = 'none';
+    });
+
     // console.log(popUpElement);
     return showPopObject;
   } catch (error) {
