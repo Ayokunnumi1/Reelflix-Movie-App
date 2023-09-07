@@ -1,9 +1,11 @@
 import { fetchShows, fetchShowsDetails } from './fetchShows.js';
+// import fetchComment from './fetchComment.js';
 
 const popUpModal = document.querySelector('.popUp-modal');
 
 const movieContainer = document.querySelector('.container-cards');
 const url = 'https://api.tvmaze.com/shows';
+// const commentUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/XLs816Sw5Ws6tzau8VMq/comments?item_id=item1';
 // eslint-disable-next-line import/prefer-default-export
 
 const displayPopUp = async (buttonId) => {
