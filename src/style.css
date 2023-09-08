@@ -265,6 +265,10 @@ form {
   color: var(--bs-danger);
 }
 
+.movie-content i {
+ color: var(--bs-black);
+}
+
 .movie-content h3 {
   padding-bottom: 1rem;
   position: absolute;
@@ -326,6 +330,9 @@ form {
   width: 250px;
   overflow-y: scroll;
 }
+
+
+
 
 @media (min-width: 375px) and (max-width: 667px) {
   .logo {
@@ -397,8 +404,9 @@ form {
     background: linear-gradient(to bottom, #cfe7f8, #4096b0);
     z-index: 11;
     top: 80%;
-    width: 90%; /* Adjust the width as needed */
-    height: auto;
+    width: 90%; 
+    /* height: calc(205vw * (375 / 660)); */
+    height: calc(100vw * 0.8);
     overflow-y: scroll;
     overflow-x: hidden;
     margin-top: 4.5rem;
@@ -431,6 +439,13 @@ form {
     background: none;
     border: none;
   }
+/* 
+  .popUp-h2-text {
+    margin: 0;
+  }
+  .popUp-h2-comment-title {
+    margin: 0;
+  } */
 
   .m-title {
     text-align: center;
@@ -535,6 +550,7 @@ form {
 }
 
 @media (min-width: 668px) and (max-width: 1020px) {
+
   .container-cards {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -547,6 +563,11 @@ form {
 
   .nav-content {
     margin-right: 4rem;
+   
+  }
+
+  .nav-content li {
+    font-size: 17px;
   }
 
   button {
@@ -677,8 +698,8 @@ form {
 
   .commentcontainer {
     display: flex;
-    margin-left: 4rem;
-    align-items: center;
+    margin-left: 1rem;
+  justify-content: center;
     border: none;
   }
 
@@ -816,7 +837,21 @@ form {
 
   .modal-content {
     display: flex;
+ 
   }
+
+  .popUp-h2-text {
+    margin: 0;
+  }
+  .popUp-h2-comment-title {
+    margin: 0;
+    border: none;
+  }
+
+  .p-class {
+    margin: 5px;
+  }
+   
 
   .descriptions {
     display: flex;
