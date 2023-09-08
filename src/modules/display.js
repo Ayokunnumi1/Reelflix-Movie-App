@@ -109,6 +109,7 @@ const displayPopUp = async (buttonId) => {
     return error;
   }
 };
+
 // eslint-disable-next-line import/prefer-default-export
 export const displayShows = async () => {
   movieContainer.innerHTML = '';
@@ -118,32 +119,25 @@ export const displayShows = async () => {
     // eslint-disable-next-line max-len
     const filteredShowObject = filterShowObject(shows, res);
     showMovies(filteredShowObject);
-
-    } catch (error) {
+  } catch (error) {
     return error;
-    }
-    
+  }
+};
 
-}
-  
-    const filterShowObject = (movies, likes) => {
-      return movies.map((show) => {
-        const itemlike = likes.find((like) => like.item_id === show.id);
-        
-          return {
-          id: show.id,
-          image: show.image.medium,
-          title: show.name,
-          likes: itemlike.likes
-        };
-      });
-    }
+const filterShowObject = (movies, likes) => movies.map((show) => {
+  const itemlike = likes.find((like) => like.item_id === show.id);
 
-    const showMovies = (filteredShowObject) => {      
+  return {
+    id: show.id,
+    image: show.image.medium,
+    title: show.name,
+    likes: itemlike.likes,
+  };
+});
 
-
-      filteredShowObject.map((filterShow) => {
-      const showElement = `<div class="movie-content-container">
+const showMovies = (filteredShowObject) => {
+  filteredShowObject.map((filterShow) => {
+    const showElement = `<div class="movie-content-container">
                     <div class="movie-thumbnail">
                         <img src="${filterShow.image}" alt="" class="movie-shows" id="${filterShow.id}">
                         <div class="overlay"> <i class="fa fa-play"></i></div>
@@ -165,64 +159,59 @@ export const displayShows = async () => {
                     </div>
 
                 </div>`;
-      return showElement;
-    }).join('');
-  }
-
-    const popupPosition = (button, popUpModal, e) => {
-      const commentClick = button.getBoundingClientRect();
-
-      const left = e.clientX - commentClick.left;
-      const top = e.clientY - commentClick.top;
-
-      popUpModal.style.left = `${left}px`;
-      popUpModal.style.top = `${top}px`;
-    };
-
-/';
-    '
->    heartIcon.style.color = 'white';
-      } else {
-        heartIcon.style.color = 'red';
-      }
-    };
-
-    document.querySelectorAll('.fa-heart').forEach((heartIcon) => {
-      heartIcon.addEventListener('click', toggleHeartColor);
-    });
-
-
-
-    const likeButtons = document.querySelectorAll('.fa-heart');
-    likeButtons.forEach((heartbutton) => {
-      heartbutton.addEventListener('click', async (e) => {
-        const heartbuttonId = parseInt(e.target.dataset.id, 10);
-        const parent = e.currentTarget.parentElement;
-        // console.log(parent);
-        const countSpan = parent.querySelector('.likes-count');
-        console.log(countSpan);
-        
-        
-
-
-        let likesCount = res.json().likes;
-        likesCount = countSpan.textContent ? parseInt(countSpan.textContent, 10) : 0;
-        // console.log(likesCount);
-        if (parent.classList.contains('liked')) {
-          parent.classList.remove('liked');
-          likesCount -= 1;
-          countSpan.textContent = `${likesCount} like`;
-        } else {
-          parent.classList.add('liked');
-          const response = await addLikes(likesUrl, heartbuttonId);
-          if (response.status === 201) {
-            likesCount += 1;
-          }
-          console.log( await response.text());
-          countSpan.textContent = `${likesCount} like`;
-        }
-      });
-    });
-    return createShowElement;
-  
+    return showElement;
+  }).join('');
 };
+
+const popupPosition = (button, popUpModal, e) => {
+  const commentClick = button.getBoundingClientRect();
+
+  const left = e.clientX - commentClick.left;
+  const top = e.clientY - commentClick.top;
+
+  popUpModal.style.left = `${left}px`;
+  popUpModal.style.top = `${top}px`;
+};
+
+const toggleHeartColor = (event) => {
+  const heartIcon = event.currentTarget;
+  const currentColor = window.getComputedStyle(heartIcon).color;
+
+  if (currentColor !== 'rgb(255, 255, 255)') {
+    heartIcon.style.color = 'white';
+  } else {
+    heartIcon.style.color = 'red';
+  }
+};
+
+document.querySelectorAll('.fa-heart').forEach((heartIcon) => {
+  heartIcon.addEventListener('click', toggleHeartColor);
+});
+
+const likeButtons = document.querySelectorAll('.fa-heart');
+
+likeButtons.forEach((heartbutton) => {
+  heartbutton.addEventListener('click', async (e) => {
+    const heartbuttonId = parseInt(e.target.dataset.id, 10);
+    const parent = e.currentTarget.parentElement;
+    // console.log(parent);
+    const countSpan = parent.querySelector('.likes-count');
+    console.log(countSpan);
+    let likesCount = res.json().likes;
+    likesCount = countSpan.textContent ? parseInt(countSpan.textContent, 10) : 0;
+    // console.log(likesCount);
+    if (parent.classList.contains('liked')) {
+      parent.classList.remove('liked');
+      likesCount -= 1;
+      countSpan.textContent = `${likesCount} like`;
+    } else {
+      parent.classList.add('liked');
+      const response = await addLikes(likesUrl, heartbuttonId);
+      if (response.status === 201) {
+        likesCount += 1;
+      }
+      console.log(await response.text());
+      countSpan.textContent = `${likesCount} like`;
+    }
+  });
+});
