@@ -128,7 +128,13 @@ export const displayShows = async () => {
                     <div class="movie-content">
                         <h3 class="movie-title">${filterShow.title} </h3>
                         <div class="movie-comment">
-                        <i class="fa fa-heart" id="heart-icon"></i>
+                        <div class="show-likes">
+                        <i class="fa fa-heart" data-id="${filterShow.id}"></i>
+                            <p class="show-likes-count">
+                              <span class="likes-count liked" id=${filterShow.id}>likes</span>
+                            </p>
+              </div>
+                       
                         <button class="comment-button" data-index="${filterShow.id}">Comment</button>
                         <button class="comment-button1">  <i class="fa fa-comment" data-index1="${filterShow.id}"></i></button>
                     </div>
