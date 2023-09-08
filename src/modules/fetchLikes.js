@@ -10,16 +10,15 @@ export const addLikes = async (likesUrl, id) => {
       }),
     };
     const response = await fetch(likesUrl, postRequestConfig);
-    const data = await response.text();
-    return data;
+    return response;
   } catch (error) {
     return error;
   }
 };
 
-export const showLikes = async (url) => {
+export const getLikes = async (likesUrl) => {
   try {
-    const response = await fetch(url);
+    const response = await fetch(likesUrl);
     const data = await response.json();
     return data;
   } catch (error) {

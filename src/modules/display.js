@@ -1,11 +1,13 @@
 import { fetchShows, fetchShowsDetails } from './fetchShows.js';
 import { fetchComment, postComment } from './fetchComment.js';
+import { addLikes, getLikes } from './fetchLikes.js';
 
 const popUpModal = document.querySelector('.popUp-modal');
 const movieContainer = document.querySelector('.container-cards');
 const url = 'https://api.tvmaze.com/shows';
 const commentUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/TmorUv6CAxzfjMnV7ubN';
-const likesUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/TmorUv6CAxzfjMnV7ubN';
+const likesUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/TmorUv6CAxzfjMnV7ubN/likes';
+
 const displayPopUp = async (buttonId) => {
   try {
     const showsPopDetails = await fetchShowsDetails(url, buttonId);
@@ -112,16 +114,35 @@ export const displayShows = async () => {
   movieContainer.innerHTML = '';
   try {
     const shows = await fetchShows(url);
+    const res = await getLikes(likesUrl);
     // eslint-disable-next-line max-len
-    const filteredShowObject = shows.map((show) => {
-      const showObj = {
-        id: show.id,
-        image: show.image.medium,
-        title: show.name,
-      };
-      return showObj;
-    });
-    const createShowElement = filteredShowObject.map((filterShow) => {
+    const filteredShowObject = filterShowObject(shows, res);
+    showMovies(filteredShowObject);
+
+    } catch (error) {
+    return error;
+    }
+    
+
+}
+  
+    const filterShowObject = (movies, likes) => {
+      return movies.map((show) => {
+        const itemlike = likes.find((like) => like.item_id === show.id);
+        
+          return {
+          id: show.id,
+          image: show.image.medium,
+          title: show.name,
+          likes: itemlike.likes
+        };
+      });
+    }
+
+    const showMovies = (filteredShowObject) => {      
+
+
+      filteredShowObject.map((filterShow) => {
       const showElement = `<div class="movie-content-container">
                     <div class="movie-thumbnail">
                         <img src="${filterShow.image}" alt="" class="movie-shows" id="${filterShow.id}">
@@ -133,7 +154,7 @@ export const displayShows = async () => {
                         <div class="show-likes">
                         <i class="fa fa-heart" data-id="${filterShow.id}"></i>
                             <p class="show-likes-count">
-                              <span class="likes-count liked" id=${filterShow.id}><span>0</span> like </span>
+                              <span class="likes-count liked" id=${filterShow.id}><span>${filterShow.likes}</span> like </span>
                           
                             </p>
               </div>
@@ -146,6 +167,7 @@ export const displayShows = async () => {
                 </div>`;
       return showElement;
     }).join('');
+  }
 
     const popupPosition = (button, popUpModal, e) => {
       const commentClick = button.getBoundingClientRect();
@@ -157,35 +179,9 @@ export const displayShows = async () => {
       popUpModal.style.top = `${top}px`;
     };
 
-    movieContainer.insertAdjacentHTML('beforeend', createShowElement);
-    const commentButton = document.querySelectorAll('.comment-button');
-    commentButton.forEach((button) => {
-      button.addEventListener('click', (e) => {
-        const buttonId = parseInt(e.target.dataset.index, 10);
-        displayPopUp(buttonId);
-        popupPosition(button, popUpModal, e);
-
-        popUpModal.style.display = 'flex';
-      });
-    });
-    const commentButton1 = document.querySelectorAll('.comment-button1');
-    commentButton1.forEach((button) => {
-      button.addEventListener('click', (e) => {
-        const buttonId = parseInt(e.target.dataset.index1, 10);
-        displayPopUp(buttonId);
-
-        popupPosition(button, popUpModal, e);
-
-        popUpModal.style.display = 'flex';
-      });
-    });
-
-    const toggleHeartColor = (event) => {
-      const heartIcon = event.currentTarget;
-      const currentColor = window.getComputedStyle(heartIcon).color;
-
-      if (currentColor !== 'rgb(255, 255, 255)') {
-        heartIcon.style.color = 'white';
+/';
+    '
+>    heartIcon.style.color = 'white';
       } else {
         heartIcon.style.color = 'red';
       }
@@ -195,28 +191,38 @@ export const displayShows = async () => {
       heartIcon.addEventListener('click', toggleHeartColor);
     });
 
-    document.querySelectorAll('.fa-heart').forEach((heartbutton) => {
+
+
+    const likeButtons = document.querySelectorAll('.fa-heart');
+    likeButtons.forEach((heartbutton) => {
       heartbutton.addEventListener('click', async (e) => {
+        const heartbuttonId = parseInt(e.target.dataset.id, 10);
         const parent = e.currentTarget.parentElement;
-        console.log(parent);
+        // console.log(parent);
         const countSpan = parent.querySelector('.likes-count');
         console.log(countSpan);
-        let likesCount = countSpan.textContent ? parseInt(countSpan.textContent, 10) : 0;
-        console.log(likesCount);
+        
+        
+
+
+        let likesCount = res.json().likes;
+        likesCount = countSpan.textContent ? parseInt(countSpan.textContent, 10) : 0;
+        // console.log(likesCount);
         if (parent.classList.contains('liked')) {
           parent.classList.remove('liked');
           likesCount -= 1;
-          // const addLikes = addLikes(likesUrl, target);
           countSpan.textContent = `${likesCount} like`;
         } else {
           parent.classList.add('liked');
-          likesCount += 1;
+          const response = await addLikes(likesUrl, heartbuttonId);
+          if (response.status === 201) {
+            likesCount += 1;
+          }
+          console.log( await response.text());
           countSpan.textContent = `${likesCount} like`;
         }
       });
     });
     return createShowElement;
-  } catch (error) {
-    return error;
-  }
+  
 };
