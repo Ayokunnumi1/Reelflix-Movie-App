@@ -1,15 +1,16 @@
-
 import { fetchShows, fetchShowsDetails } from './fetchShows.js';
 import { fetchComment, postComment } from './fetchComment.js';
+
 const popUpModal = document.querySelector('.popUp-modal');
 const movieContainer = document.querySelector('.container-cards');
 const url = 'https://api.tvmaze.com/shows';
 const commentUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/TmorUv6CAxzfjMnV7ubN';
+const likesUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/TmorUv6CAxzfjMnV7ubN';
 const displayPopUp = async (buttonId) => {
   try {
     const showsPopDetails = await fetchShowsDetails(url, buttonId);
     // console.log(showsPopDetails);
-     const comments = await fetchComment(commentUrl, buttonId);
+    const comments = await fetchComment(commentUrl, buttonId);
     const commentLength = comments.length;
     const elements = comments.map((comment) => {
       const li = `<li class="p-class">
@@ -84,7 +85,7 @@ const displayPopUp = async (buttonId) => {
       const submitButtonId = e.target.id;
       const inputName = commentForm.querySelector('#input-name');
       const commentText = commentForm.querySelector('#comment-text');
-    //  eslint-disable-next-line camelcase
+      //  eslint-disable-next-line camelcase
       const item_id = submitButtonId;
       const username = inputName.value;
       const comment = commentText.value;
@@ -106,6 +107,7 @@ const displayPopUp = async (buttonId) => {
     return error;
   }
 };
+// eslint-disable-next-line import/prefer-default-export
 export const displayShows = async () => {
   movieContainer.innerHTML = '';
   try {
@@ -131,7 +133,8 @@ export const displayShows = async () => {
                         <div class="show-likes">
                         <i class="fa fa-heart" data-id="${filterShow.id}"></i>
                             <p class="show-likes-count">
-                              <span class="likes-count liked" id=${filterShow.id}>likes</span>
+                              <span class="likes-count liked" id=${filterShow.id}><span>0</span> like </span>
+                          
                             </p>
               </div>
                        
@@ -144,18 +147,15 @@ export const displayShows = async () => {
       return showElement;
     }).join('');
 
-
     const popupPosition = (button, popUpModal, e) => {
-            const commentClick = button.getBoundingClientRect();
-      
-            const left = e.clientX - commentClick.left;
-            const top = e.clientY - commentClick.top;
-      
-            popUpModal.style.left = `${left}px`;
-            popUpModal.style.top = `${top}px`;
-          };
+      const commentClick = button.getBoundingClientRect();
 
-          
+      const left = e.clientX - commentClick.left;
+      const top = e.clientY - commentClick.top;
+
+      popUpModal.style.left = `${left}px`;
+      popUpModal.style.top = `${top}px`;
+    };
 
     movieContainer.insertAdjacentHTML('beforeend', createShowElement);
     const commentButton = document.querySelectorAll('.comment-button');
@@ -180,28 +180,43 @@ export const displayShows = async () => {
       });
     });
 
-
-  const  toggleHeartColor=  (event) => {
-      const heartIcon = event.currentTarget; 
+    const toggleHeartColor = (event) => {
+      const heartIcon = event.currentTarget;
       const currentColor = window.getComputedStyle(heartIcon).color;
-    
+
       if (currentColor !== 'rgb(255, 255, 255)') {
-        
         heartIcon.style.color = 'white';
       } else {
-        
         heartIcon.style.color = 'red';
       }
-    }
-    
+    };
+
     document.querySelectorAll('.fa-heart').forEach((heartIcon) => {
       heartIcon.addEventListener('click', toggleHeartColor);
+    });
+
+    document.querySelectorAll('.fa-heart').forEach((heartbutton) => {
+      heartbutton.addEventListener('click', async (e) => {
+        const parent = e.currentTarget.parentElement;
+        console.log(parent);
+        const countSpan = parent.querySelector('.likes-count');
+        console.log(countSpan);
+        let likesCount = countSpan.textContent ? parseInt(countSpan.textContent, 10) : 0;
+        console.log(likesCount);
+        if (parent.classList.contains('liked')) {
+          parent.classList.remove('liked');
+          likesCount -= 1;
+          // const addLikes = addLikes(likesUrl, target);
+          countSpan.textContent = `${likesCount} like`;
+        } else {
+          parent.classList.add('liked');
+          likesCount += 1;
+          countSpan.textContent = `${likesCount} like`;
+        }
+      });
     });
     return createShowElement;
   } catch (error) {
     return error;
   }
-
-  
 };
-
