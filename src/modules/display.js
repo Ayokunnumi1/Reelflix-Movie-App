@@ -10,7 +10,7 @@ const displayPopUp = async (buttonId) => {
     const showsPopDetails = await fetchShowsDetails(url, buttonId);
     // console.log(showsPopDetails);
      const comments = await fetchComment(commentUrl, buttonId);
-    // const commentLength = comments.length;
+    const commentLength = comments.length;
     const elements = comments.map((comment) => {
       const li = `<li class="p-class">
                 <span>${comment.creation_date}</span>
@@ -49,9 +49,10 @@ const displayPopUp = async (buttonId) => {
              </div>
        </div>
                 <div class="commentcontainer">
-                
+
+              <h2 class="popUp-h2-comment-title">Comments(2)</h2>
             <div class="comment-container">
-            <h2 class="popUp-h2-comment-title">Comments(2)</h2>
+          
             <ul class="popUP-comment-content">
                 ${elements.join('')}
             </ul>
@@ -68,6 +69,10 @@ const displayPopUp = async (buttonId) => {
     `;
 
     popUpModal.innerHTML = popUpElement;
+    const popUpCountComment = document.querySelectorAll('.popUp-h2-comment-title');
+    popUpCountComment.forEach((element) => {
+      element.textContent = `Comments ${commentLength}`;
+    });
     const closeButton = document.querySelector('.close-button');
     closeButton.addEventListener('click', () => {
       popUpModal.style.display = 'none';

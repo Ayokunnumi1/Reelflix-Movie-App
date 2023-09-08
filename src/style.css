@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 :root {
-  --bs-pink: #f15aa6;
   --bs-red: #dc3545;
   --bs-cyan: #0dcaf0;
   --bs-black: #000000d7;
@@ -20,7 +19,6 @@
   --bs-dark: #212529;
   --bs-secondary-text: #6c757d;
   --bs-success-text: #146c43;
-  --bs-info-text: #5a8189;
 }
 
 body {
@@ -266,7 +264,7 @@ form {
 }
 
 .movie-content i {
- color: var(--bs-black);
+  color: var(--bs-black);
 }
 
 .movie-content h3 {
@@ -330,9 +328,6 @@ form {
   width: 250px;
   overflow-y: scroll;
 }
-
-
-
 
 @media (min-width: 375px) and (max-width: 667px) {
   .logo {
@@ -404,7 +399,7 @@ form {
     background: linear-gradient(to bottom, #cfe7f8, #4096b0);
     z-index: 11;
     top: 80%;
-    width: 90%; 
+    width: 90%;
     /* height: calc(205vw * (375 / 660)); */
     height: calc(100vw * 0.8);
     overflow-y: scroll;
@@ -439,13 +434,22 @@ form {
     background: none;
     border: none;
   }
-/* 
+
+  
   .popUp-h2-text {
     margin: 0;
   }
-  .popUp-h2-comment-title {
+
+.popUp-h2-comment-title {
+    position: relative;
+    top: -50%;
+    left: 5%;
     margin: 0;
-  } */
+    border: none;
+    color: var(--bs-success-text);
+    font-family: 'Montserrat', sans-serif;
+  }
+
 
   .m-title {
     text-align: center;
@@ -550,7 +554,6 @@ form {
 }
 
 @media (min-width: 668px) and (max-width: 1020px) {
-
   .container-cards {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -563,7 +566,6 @@ form {
 
   .nav-content {
     margin-right: 4rem;
-   
   }
 
   .nav-content li {
@@ -680,6 +682,20 @@ form {
     display: flex;
   }
 
+  .popUp-h2-text {
+    margin: 0;
+  }
+
+  .popUp-h2-comment-title {
+    position: relative;
+    top: -30%;
+    left: 24%;
+    margin: 0;
+    border: none;
+    color: var(--bs-success-text);
+    font-family: 'Montserrat', sans-serif;
+  }
+
   .descriptions {
     display: flex;
     position: relative;
@@ -699,7 +715,7 @@ form {
   .commentcontainer {
     display: flex;
     margin-left: 1rem;
-  justify-content: center;
+    justify-content: center;
     border: none;
   }
 
@@ -837,21 +853,27 @@ form {
 
   .modal-content {
     display: flex;
- 
   }
 
   .popUp-h2-text {
     margin: 0;
+    
   }
+
   .popUp-h2-comment-title {
+    position: relative;
+    top: -50%;
+    left: 23%;
     margin: 0;
     border: none;
+    color: var(--bs-success-text);
+    font-family: 'Montserrat', sans-serif;
   }
 
   .p-class {
     margin: 5px;
   }
-   
+
 
   .descriptions {
     display: flex;
