@@ -2,6 +2,137 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/modules/display.js":
+/*!********************************!*\
+  !*** ./src/modules/display.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _fetchShows_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./fetchShows.js */ "./src/modules/fetchShows.js");
+/* harmony import */ var _fetchLikes_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./fetchLikes.js */ "./src/modules/fetchLikes.js");
+/* harmony import */ var _popUp_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./popUp.js */ "./src/modules/popUp.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw new Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw new Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+var url = 'https://api.tvmaze.com/shows';
+var likesUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/TmorUv6CAxzfjMnV7ubN/likes';
+
+// Function to process show data by merging it with likes
+var processShowData = function processShowData(movies, likes) {
+  return movies.map(function (show) {
+    var itemlike = likes.find(function (like) {
+      return like.item_id === show.id;
+    });
+    var likesCount = (itemlike === null || itemlike === void 0 ? void 0 : itemlike.likes) || 0;
+    return {
+      id: show.id,
+      image: show.image.medium,
+      title: show.name,
+      likes: likesCount
+    };
+  });
+};
+
+// Function to generate HTML elements for shows
+var movieElements = function movieElements(show) {
+  var movieContentContainer = document.createElement('div');
+  movieContentContainer.classList.add('movie-content-container');
+  movieContentContainer.innerHTML = "      \n        <div class=\"movie-thumbnail\">\n          <img src=\"".concat(show.image, "\" alt=\"\" class=\"movie-shows\" id=\"").concat(show.id, "\">\n          <div class=\"overlay\"> <i class=\"fa fa-play\"></i></div>\n        </div>\n        <div class=\"movie-content\">\n          <h3 class=\"movie-title\">").concat(show.title, " </h3>\n          <div class=\"movie-comment\">\n            <div class=\"show-likes\">\n              <i class=\"fa fa-heart\" data-id=\"").concat(show.id, "\"></i>\n              <p class=\"show-likes-count\">\n                <span class=\"likes-count liked\" id=\"").concat(show.id, "\"><span>").concat(show.likes, "</span> like </span>\n              </p>\n            </div>\n            <button class=\"comment-button\" data-index=\"").concat(show.id, "\">Comment</button>\n            <button class=\"comment-button1\">  <i class=\"fa fa-comment\" data-index1=\"").concat(show.id, "\"></i></button>\n          </div>\n        </div>\n    ");
+  return movieContentContainer;
+};
+var renderMovies = function renderMovies(movies) {
+  var movieContainer = document.querySelector('.container-cards');
+  movieContainer.innerHTML = '';
+  movies.forEach(function (movie) {
+    var movieElement = movieElements(movie);
+    movieContainer.appendChild(movieElement);
+  });
+};
+
+// Function to update likes
+var updateLikesCount = function updateLikesCount(id) {
+  var likesCount = document.querySelector(".likes-count[id=\"".concat(id, "\"] > span"));
+  var likesCountValue = parseInt(likesCount.textContent, 10);
+  likesCount.textContent = "".concat(likesCountValue + 1);
+};
+
+// Function to handle like button click
+var handleLikeButtonClick = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(heartbutton) {
+    var heartbuttonId, response;
+    return _regeneratorRuntime().wrap(function _callee$(_context) {
+      while (1) switch (_context.prev = _context.next) {
+        case 0:
+          heartbuttonId = parseInt(heartbutton.dataset.id, 10);
+          _context.next = 3;
+          return (0,_fetchLikes_js__WEBPACK_IMPORTED_MODULE_1__.addLikes)(likesUrl, heartbuttonId);
+        case 3:
+          response = _context.sent;
+          if (response.status === 201) {
+            updateLikesCount(heartbuttonId);
+          }
+        case 5:
+        case "end":
+          return _context.stop();
+      }
+    }, _callee);
+  }));
+  return function handleLikeButtonClick(_x) {
+    return _ref.apply(this, arguments);
+  };
+}();
+var addEventToLikeButtons = function addEventToLikeButtons() {
+  var likeButtons = document.querySelectorAll('.fa-heart');
+  likeButtons.forEach(function (heartbutton) {
+    heartbutton.addEventListener('click', function (e) {
+      handleLikeButtonClick(e.currentTarget);
+    });
+  });
+};
+
+// Initialize the application
+var initializeApp = /*#__PURE__*/function () {
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+    var movies, likes, filteredShowObject, totalMovies;
+    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+      while (1) switch (_context2.prev = _context2.next) {
+        case 0:
+          _context2.next = 2;
+          return (0,_fetchShows_js__WEBPACK_IMPORTED_MODULE_0__.fetchShows)(url);
+        case 2:
+          movies = _context2.sent;
+          _context2.next = 5;
+          return (0,_fetchLikes_js__WEBPACK_IMPORTED_MODULE_1__.getLikes)(likesUrl);
+        case 5:
+          likes = _context2.sent;
+          filteredShowObject = processShowData(movies, likes);
+          totalMovies = document.querySelector('.total-movies');
+          totalMovies.textContent = " All movies (".concat(filteredShowObject.length, ")");
+          renderMovies(filteredShowObject);
+          addEventToLikeButtons();
+          (0,_popUp_js__WEBPACK_IMPORTED_MODULE_2__["default"])();
+        case 12:
+        case "end":
+          return _context2.stop();
+      }
+    }, _callee2);
+  }));
+  return function initializeApp() {
+    return _ref2.apply(this, arguments);
+  };
+}();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initializeApp);
+
+/***/ }),
+
 /***/ "./src/modules/fetchComment.js":
 /*!*************************************!*\
   !*** ./src/modules/fetchComment.js ***!
@@ -254,137 +385,6 @@ var fetchShowsDetails = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ "./src/modules/none.js":
-/*!*****************************!*\
-  !*** ./src/modules/none.js ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _fetchShows_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./fetchShows.js */ "./src/modules/fetchShows.js");
-/* harmony import */ var _fetchLikes_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./fetchLikes.js */ "./src/modules/fetchLikes.js");
-/* harmony import */ var _popUp_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./popUp.js */ "./src/modules/popUp.js");
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw new Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw new Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-
-
-
-var url = 'https://api.tvmaze.com/shows';
-var likesUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/TmorUv6CAxzfjMnV7ubN/likes';
-
-// Function to process show data by merging it with likes
-var processShowData = function processShowData(movies, likes) {
-  return movies.map(function (show) {
-    var itemlike = likes.find(function (like) {
-      return like.item_id === show.id;
-    });
-    var likesCount = (itemlike === null || itemlike === void 0 ? void 0 : itemlike.likes) || 0;
-    return {
-      id: show.id,
-      image: show.image.medium,
-      title: show.name,
-      likes: likesCount
-    };
-  });
-};
-
-// Function to generate HTML elements for shows
-var movieElements = function movieElements(show) {
-  var movieContentContainer = document.createElement('div');
-  movieContentContainer.classList.add('movie-content-container');
-  movieContentContainer.innerHTML = "      \n        <div class=\"movie-thumbnail\">\n          <img src=\"".concat(show.image, "\" alt=\"\" class=\"movie-shows\" id=\"").concat(show.id, "\">\n          <div class=\"overlay\"> <i class=\"fa fa-play\"></i></div>\n        </div>\n        <div class=\"movie-content\">\n          <h3 class=\"movie-title\">").concat(show.title, " </h3>\n          <div class=\"movie-comment\">\n            <div class=\"show-likes\">\n              <i class=\"fa fa-heart\" data-id=\"").concat(show.id, "\"></i>\n              <p class=\"show-likes-count\">\n                <span class=\"likes-count liked\" id=\"").concat(show.id, "\"><span>").concat(show.likes, "</span> like </span>\n              </p>\n            </div>\n            <button class=\"comment-button\" data-index=\"").concat(show.id, "\">Comment</button>\n            <button class=\"comment-button1\">  <i class=\"fa fa-comment\" data-index1=\"").concat(show.id, "\"></i></button>\n          </div>\n        </div>\n    ");
-  return movieContentContainer;
-};
-var renderMovies = function renderMovies(movies) {
-  var movieContainer = document.querySelector('.container-cards');
-  movieContainer.innerHTML = '';
-  movies.forEach(function (movie) {
-    var movieElement = movieElements(movie);
-    movieContainer.appendChild(movieElement);
-  });
-};
-
-// Function to update likes
-var updateLikesCount = function updateLikesCount(id) {
-  var likesCount = document.querySelector(".likes-count[id=\"".concat(id, "\"] > span"));
-  var likesCountValue = parseInt(likesCount.textContent, 10);
-  console.log(likesCountValue);
-  likesCount.textContent = "".concat(likesCountValue + 1);
-};
-
-// Function to handle like button click
-var handleLikeButtonClick = /*#__PURE__*/function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(heartbutton) {
-    var heartbuttonId, response;
-    return _regeneratorRuntime().wrap(function _callee$(_context) {
-      while (1) switch (_context.prev = _context.next) {
-        case 0:
-          heartbuttonId = parseInt(heartbutton.dataset.id, 10);
-          _context.next = 3;
-          return (0,_fetchLikes_js__WEBPACK_IMPORTED_MODULE_1__.addLikes)(likesUrl, heartbuttonId);
-        case 3:
-          response = _context.sent;
-          if (response.status === 201) {
-            updateLikesCount(heartbuttonId);
-          }
-        case 5:
-        case "end":
-          return _context.stop();
-      }
-    }, _callee);
-  }));
-  return function handleLikeButtonClick(_x) {
-    return _ref.apply(this, arguments);
-  };
-}();
-var addEventToLikeButtons = function addEventToLikeButtons() {
-  var likeButtons = document.querySelectorAll('.fa-heart');
-  likeButtons.forEach(function (heartbutton) {
-    heartbutton.addEventListener('click', function (e) {
-      handleLikeButtonClick(e.currentTarget);
-    });
-  });
-};
-
-// Initialize the application
-var initializeApp = /*#__PURE__*/function () {
-  var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-    var movies, likes, filteredShowObject;
-    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-      while (1) switch (_context2.prev = _context2.next) {
-        case 0:
-          _context2.next = 2;
-          return (0,_fetchShows_js__WEBPACK_IMPORTED_MODULE_0__.fetchShows)(url);
-        case 2:
-          movies = _context2.sent;
-          _context2.next = 5;
-          return (0,_fetchLikes_js__WEBPACK_IMPORTED_MODULE_1__.getLikes)(likesUrl);
-        case 5:
-          likes = _context2.sent;
-          filteredShowObject = processShowData(movies, likes);
-          renderMovies(filteredShowObject);
-          addEventToLikeButtons();
-          (0,_popUp_js__WEBPACK_IMPORTED_MODULE_2__["default"])();
-        case 10:
-        case "end":
-          return _context2.stop();
-      }
-    }, _callee2);
-  }));
-  return function initializeApp() {
-    return _ref2.apply(this, arguments);
-  };
-}();
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initializeApp);
-
-/***/ }),
-
 /***/ "./src/modules/popUp.js":
 /*!******************************!*\
   !*** ./src/modules/popUp.js ***!
@@ -407,108 +407,6 @@ var popUpModal = document.querySelector('.popUp-modal');
 var url = 'https://api.tvmaze.com/shows';
 var commentUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/TmorUv6CAxzfjMnV7ubN';
 
-// const displayPopUp1 = async (buttonId) => {
-//   try {
-//     const showsPopDetails = await fetchShowsDetails(url, buttonId);
-//     // console.log(showsPopDetails);
-//     const comments = await fetchComment(commentUrl, buttonId);
-//     const commentLength = comments.length;
-//     const elements = comments.map((comment) => {
-//       const li = `<li class="p-class">
-//                 <span>${comment.creation_date}</span>
-//                 <span>${comment.username}</span>
-//                 <span>${comment.comment}</span>
-//             </li>`;
-//       return li;
-//     });
-//     const showPopObject = {
-//       id: showsPopDetails.id,
-//       title: showsPopDetails.name,
-//       image: showsPopDetails.image.medium,
-//       description: showsPopDetails.summary,
-//       genres: showsPopDetails.genres,
-//       language: showsPopDetails.language,
-//       rating: showsPopDetails.rating.average,
-//     };
-//     // console.log(showPopObject);
-//     const popUpElement = `
-
-//     <button class="close-button"><i class="fa fa-close"></i></button>
-
-//     <h3 class="m-title">${showPopObject.title}</h3>
-
-//         <div class="imgdes">
-//         <img src="${showPopObject.image}" alt="" class="popUp-img">
-//         <p  class="para">${showPopObject.description}</p>
-//         </div>
-
-//         <div class="modal-content">
-
-//             <div class="descriptions">
-//             <p>${showPopObject.genres}</p>
-//             <p>${showPopObject.language}</p>
-//             <p>${showPopObject.rating}</p>
-//              </div>
-//        </div>
-//                 <div class="commentcontainer">
-
-//               <h2 class="popUp-h2-comment-title">Comments(2)</h2>
-//             <div class="comment-container">
-
-//             <ul class="popUP-comment-content">
-//                 ${elements.join('')}
-//             </ul>
-//         </div>
-//         </div>
-
-//         <form action="" class="comment-form">
-//             <input type="text" name="text" id="input-name" required placeholder="Your name">
-//             <textarea name="text" id="comment-text" cols="30" rows="10" required placeholder="Add a comment" ></textarea>
-//             <button type="submit" id="${showPopObject.id}" class="submit-button">Submit</button>
-//         </form>
-
-//     `;
-
-//     popUpModal.innerHTML = popUpElement;
-//     const popUpCountComment = document.querySelectorAll('.popUp-h2-comment-title');
-//     popUpCountComment.forEach((element) => {
-//       element.textContent = `Comments ${commentLength}`;
-//     });
-
-//     const closeButton = document.querySelector('.close-button');
-//     closeButton.addEventListener('click', () => {
-//       popUpModal.style.display = 'none';
-//     });
-
-//     const submitButton = document.querySelector('.submit-button');
-//     const commentForm = document.querySelector('.comment-form');
-//     submitButton.addEventListener('click', async (e) => {
-//       e.preventDefault();
-//       const submitButtonId = e.target.id;
-//       const inputName = commentForm.querySelector('#input-name');
-//       const commentText = commentForm.querySelector('#comment-text');
-//       //  eslint-disable-next-line camelcase
-//       const item_id = submitButtonId;
-//       const username = inputName.value;
-//       const comment = commentText.value;
-//       const userInfo = { item_id, username, comment };
-//       try {
-//         const response = await postComment(commentUrl, userInfo);
-//         if (response === 'Created') {
-//           displayPopUp(submitButtonId);
-//           inputName.value = '';
-//           commentText.value = '';
-//         }
-//       } catch (error) {
-//         return error;
-//       }
-//       return userInfo;
-//     });
-//     return showPopObject;
-//   } catch (error) {
-//     return error;
-//   }
-// };
 // Function to create a comment list HTML from an array of comments
 var createCommentList = function createCommentList(comments) {
   return comments.map(function (comment) {
@@ -517,8 +415,12 @@ var createCommentList = function createCommentList(comments) {
 };
 
 // Function to create the pop-up modal HTML
+
 var createPopUpModal = function createPopUpModal(showDetails, comments) {
-  var commentLength = comments.length;
+  function calculateCommentLength(comments) {
+    return comments.length;
+  }
+  var commentLength = calculateCommentLength(comments);
   var commentList = createCommentList(comments);
   return "\n    <button class=\"close-button\"><i class=\"fa fa-close\"></i></button>\n    <h3 class=\"m-title\">".concat(showDetails.title, "</h3>\n    <div class=\"imgdes\">\n      <img src=\"").concat(showDetails.image, "\" alt=\"\" class=\"popUp-img\">\n      <p class=\"para\">").concat(showDetails.description, "</p>\n    </div>\n    <div class=\"modal-content\">\n      <div class=\"descriptions\">\n        <p>").concat(showDetails.genres, "</p>\n        <p>").concat(showDetails.language, "</p>\n        <p>").concat(showDetails.rating, "</p>\n      </div>\n    </div>\n    <div class=\"commentcontainer\">\n      <h2 class=\"popUp-h2-comment-title\">Comments(").concat(commentLength, ")</h2>\n      <div class=\"comment-container\">\n        <ul class=\"popUP-comment-content\">\n          ").concat(commentList, "\n        </ul>\n      </div>\n    </div>\n    <form action=\"\" class=\"comment-form\">\n      <input type=\"text\" name=\"text\" id=\"input-name\" required placeholder=\"Your name\">\n      <textarea name=\"text\" id=\"comment-text\" cols=\"30\" rows=\"10\" required placeholder=\"Add a comment\"></textarea>\n      <button type=\"submit\" id=\"").concat(showDetails.id, "\" class=\"submit-button\">Submit</button>\n    </form>\n  ");
 };
@@ -588,17 +490,16 @@ var displayPopUp = /*#__PURE__*/function () {
                       inputName.value = '';
                       commentText.value = '';
                     }
-                    _context.next = 18;
-                    break;
-                  case 15:
-                    _context.prev = 15;
+                    return _context.abrupt("return", response);
+                  case 16:
+                    _context.prev = 16;
                     _context.t0 = _context["catch"](8);
                     return _context.abrupt("return", _context.t0);
-                  case 18:
+                  case 19:
                   case "end":
                     return _context.stop();
                 }
-              }, _callee, null, [[8, 15]]);
+              }, _callee, null, [[8, 16]]);
             }));
             return function (_x2) {
               return _ref2.apply(this, arguments);
@@ -626,7 +527,7 @@ var popupPosition = function popupPosition(button, popUpModal, e) {
   popUpModal.style.left = "".concat(left, "px");
   popUpModal.style.top = "".concat(top, "px");
 };
-var addEventToCommentButton = function addEventToCommentButton(button) {
+var addEventToCommentButton = function addEventToCommentButton() {
   var commentButton = document.querySelectorAll('.comment-button');
   commentButton.forEach(function (button) {
     button.addEventListener('click', function (e) {
@@ -646,21 +547,6 @@ var addEventToCommentButton = function addEventToCommentButton(button) {
     });
   });
 };
-// const toggleHeartColor = (event) => {
-//   const heartIcon = event.currentTarget;
-//   const currentColor = window.getComputedStyle(heartIcon).color;
-
-//   if (currentColor !== 'rgb(255, 255, 255)') {
-//     heartIcon.style.color = 'white';
-//   } else {
-//     heartIcon.style.color = 'red';
-//   }
-// };
-
-// document.querySelectorAll('.fa-heart').forEach((heartIcon) => {
-//   heartIcon.addEventListener('click', toggleHeartColor);
-// });
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addEventToCommentButton);
 
 /***/ }),
@@ -887,7 +773,7 @@ button {
 }
 
 .movie-content i {
-  color: var(--bs-white);
+  color: var(--bs-black);
   font-size: 25px;
 }
 
@@ -998,10 +884,6 @@ form {
 
 .movie-content i:hover {
   color: var(--bs-danger);
-}
-
-.movie-content i {
-  color: var(--bs-black);
 }
 
 .movie-content h3 {
@@ -1137,6 +1019,7 @@ form {
     z-index: 11;
     top: 80%;
     width: 90%;
+
     /* height: calc(205vw * (375 / 660)); */
     height: calc(100vw * 0.8);
     overflow-y: scroll;
@@ -1172,12 +1055,11 @@ form {
     border: none;
   }
 
-  
   .popUp-h2-text {
     margin: 0;
   }
 
-.popUp-h2-comment-title {
+  .popUp-h2-comment-title {
     position: relative;
     top: -50%;
     left: 5%;
@@ -1186,7 +1068,6 @@ form {
     color: var(--bs-success-text);
     font-family: 'Montserrat', sans-serif;
   }
-
 
   .m-title {
     text-align: center;
@@ -1594,7 +1475,6 @@ form {
 
   .popUp-h2-text {
     margin: 0;
-    
   }
 
   .popUp-h2-comment-title {
@@ -1610,7 +1490,6 @@ form {
   .p-class {
     margin: 5px;
   }
-
 
   .descriptions {
     display: flex;
@@ -1678,7 +1557,7 @@ form {
     font-family: 'Montserrat', sans-serif;
   }
 }
-`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"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","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');\r\n\r\n:root {\r\n  --bs-red: #dc3545;\r\n  --bs-cyan: #0dcaf0;\r\n  --bs-black: #000000d7;\r\n  --bs-white: #fff;\r\n  --bs-gray: #6c757d;\r\n  --bs-gray-700: #495057;\r\n  --bs-gray-800: #343a40;\r\n  --bs-gray-900: #212529;\r\n  --bs-primary: #0d6efd;\r\n  --bs-secondary: #6c757d;\r\n  --bs-success: #155f3ce7;\r\n  --bs-info: #0dcaf0;\r\n  --bs-warning: #ffc107;\r\n  --bs-danger: #dc3545;\r\n  --bs-light: #f8f9fa;\r\n  --bs-dark: #212529;\r\n  --bs-secondary-text: #6c757d;\r\n  --bs-success-text: #146c43;\r\n}\r\n\r\nbody {\r\n  margin: auto 0;\r\n  overflow-x: hidden;\r\n  position: relative;\r\n\r\n  /* background-color: var(--bs-gray-700); */\r\n  font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\nmain {\r\n  border-bottom: 2px solid var(--bs-cyan);\r\n  margin-top: 7rem;\r\n}\r\n\r\nmain::before {\r\n  content: '';\r\n  position: absolute;\r\n  z-index: 0;\r\n  pointer-events: none;\r\n  top: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  background: url(./asset/img/home__bg.jpg);\r\n  opacity: 0.2;\r\n}\r\n\r\nheader {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  background: var(--bs-cyan);\r\n  border-bottom: 2px solid var(--bs-cyan);\r\n  color: var(--bs-light);\r\n  padding: 0.5rem;\r\n  position: fixed;\r\n  z-index: 10;\r\n  width: 100%;\r\n  top: 0;\r\n}\r\n\r\n.header-content-logo {\r\n  display: flex;\r\n}\r\n\r\n.logo {\r\n  background: url('./asset/img/logo.jpg') no-repeat;\r\n  background-size: cover;\r\n  width: 100px;\r\n  height: 100px;\r\n  border-radius: 50px;\r\n}\r\n\r\n.nav-content {\r\n  display: flex;\r\n  list-style: none;\r\n  margin-right: 8rem;\r\n}\r\n\r\n.header-content-nav {\r\n  display: flex;\r\n  justify-content: space-around;\r\n  align-self: center;\r\n  margin-right: 3rem;\r\n}\r\n\r\n.nav-content li {\r\n  margin-left: 3rem;\r\n  font-size: 20px;\r\n}\r\n\r\n.nav-content li a {\r\n  text-decoration: none;\r\n  color: var(--bs-light);\r\n}\r\n\r\nli a:hover {\r\n  text-decoration: underline;\r\n  color: var(--bs-warning);\r\n}\r\n\r\nbutton {\r\n  margin-left: 1rem;\r\n  width: 6vw;\r\n  height: 2vw;\r\n}\r\n\r\n.home-title {\r\n  color: var(--bs-light);\r\n  text-align: left;\r\n  margin-left: 1rem;\r\n}\r\n\r\n.home-container {\r\n  margin-top: 3rem;\r\n  overflow-x: hidden;\r\n  margin-right: 0.5rem;\r\n  position: relative;\r\n}\r\n\r\n.home-container h2 {\r\n  text-align: center;\r\n  margin-top: 2.5rem;\r\n  background: linear-gradient(45deg, #66fc3d, #46c4d2, #21a7e0ee);\r\n  -webkit-background-clip: text;\r\n  color: transparent;\r\n  /* stylelint-disable-next-line csstree/validator */\r\n  background-clip: text;\r\n  font-size: 27px;\r\n}\r\n\r\n.sign-in {\r\n  margin-right: 1rem;\r\n  background: none;\r\n  border: none;\r\n}\r\n\r\n.sign-in i {\r\n  font-size: 50px;\r\n  color: var(--bs-light);\r\n}\r\n\r\n.overlay i {\r\n  position: absolute;\r\n  bottom: 45%;\r\n  font-size: 50px;\r\n  color: var(--bs-light);\r\n}\r\n\r\n.movie-content i {\r\n  color: var(--bs-white);\r\n  font-size: 25px;\r\n}\r\n\r\n.sign-in i:hover {\r\n  font-size: 50px;\r\n  color: var(--bs-warning);\r\n}\r\n\r\n.container-cards {\r\n  display: grid;\r\n  grid-template-columns: repeat(4, 1fr);\r\n  grid-template-rows: repeat(2, 1fr);\r\n  row-gap: 10px;\r\n  margin-top: 4rem;\r\n  position: relative;\r\n}\r\n\r\nform {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  position: absolute;\r\n  top: 5px;\r\n  right: 0;\r\n  margin: 2rem;\r\n  font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\n.search-button {\r\n  width: 8vw;\r\n  height: 2.5vw;\r\n}\r\n\r\n.search-input-container {\r\n  display: flex;\r\n  align-items: flex-start;\r\n  justify-content: space-around;\r\n}\r\n\r\n.search-input {\r\n  padding: 10px;\r\n  border: 1px solid #ccc;\r\n  border-radius: 4px;\r\n}\r\n\r\n.comment-button {\r\n  width: 11vw;\r\n  height: 3vw;\r\n  align-self: flex-end;\r\n}\r\n\r\n.search-button,\r\n.comment-button {\r\n  background-color: var(--bs-primary);\r\n  color: var(--bs-light);\r\n  border: none;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  font-size: 12px;\r\n  font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\n.comment-button,\r\n.search-button:hover {\r\n  background-color: var(--bs-cyan);\r\n}\r\n\r\n.movie-content-container {\r\n  margin: 0.5rem;\r\n  border-radius: 11px;\r\n  box-shadow: 0 4px 8px rgba(50, 108, 184, 0.5);\r\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\r\n  cursor: pointer;\r\n  font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\n.movie-thumbnail {\r\n  background-size: contain;\r\n  z-index: 5;\r\n  border-radius: 10px;\r\n  text-align: center;\r\n  position: relative;\r\n}\r\n\r\n.movie-content {\r\n  padding: 3rem;\r\n  position: relative;\r\n}\r\n\r\n.overlay {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  background-color: rgba(62, 195, 243, 0.45);\r\n  opacity: 0;\r\n  transition: opacity 0.3s ease;\r\n  border-radius: 12px;\r\n}\r\n\r\n.overlay i:hover {\r\n  color: var(--bs-warning);\r\n}\r\n\r\n.overlay:hover {\r\n  opacity: 1;\r\n}\r\n\r\n.movie-content i:hover {\r\n  color: var(--bs-danger);\r\n}\r\n\r\n.movie-content i {\r\n  color: var(--bs-black);\r\n}\r\n\r\n.movie-content h3 {\r\n  padding-bottom: 1rem;\r\n  position: absolute;\r\n  top: 0;\r\n  text-align: center;\r\n  color: var(--bs-red);\r\n}\r\n\r\n.movie-thumbnail:hover {\r\n  transform: scale(1.05);\r\n  box-shadow: 0 8px 16px rgba(53, 139, 210, 0.4);\r\n}\r\n\r\n.movie-comment {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  position: relative;\r\n  top: 1.5rem;\r\n}\r\n\r\n.comment-button:hover {\r\n  background: var(--bs-secondary);\r\n}\r\n\r\n.footer-copyright {\r\n  font-family: 'Montserrat', sans-serif;\r\n  background:\r\n    linear-gradient(\r\n      to right,\r\n      var(--bs-white),\r\n      var(--bs-warning),\r\n      var(--bs-cyan)\r\n    );\r\n  /* stylelint-disable-next-line csstree/validator */\r\n  background-clip: text;\r\n  -webkit-background-clip: text;\r\n  color: transparent;\r\n  padding: 20px;\r\n  text-align: center;\r\n  font-weight: 700;\r\n}\r\n\r\n.popUp-modal {\r\n  display: none;\r\n  border: 3px solid red;\r\n  flex-direction: column;\r\n}\r\n\r\n.comment-form {\r\n  border: 3px solid green;\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 150px;\r\n  position: relative;\r\n}\r\n\r\n.comment-container {\r\n  border: 3px solid brown;\r\n  width: 250px;\r\n  overflow-y: scroll;\r\n}\r\n\r\n@media (min-width: 375px) and (max-width: 667px) {\r\n  .logo {\r\n    width: 60px;\r\n    height: 60px;\r\n  }\r\n\r\n  .header-content-nav {\r\n    display: none;\r\n  }\r\n\r\n  .mobile-menu {\r\n    margin: 1rem 3rem 0 3rem;\r\n    font-size: 28px;\r\n  }\r\n\r\n  .container-cards {\r\n    display: flex;\r\n    flex-direction: column;\r\n  }\r\n\r\n  form {\r\n    margin: calc(7rem - 1.5rem) calc(5rem - 1.5rem) 0 0;\r\n    bottom: 0;\r\n    justify-content: center;\r\n  }\r\n\r\n  .search-button {\r\n    width: 18vw;\r\n    height: calc(6vw + 6px);\r\n  }\r\n\r\n  .home-container {\r\n    margin-top: 0;\r\n  }\r\n\r\n  .home-container h2 {\r\n    margin-bottom: 1rem;\r\n    font-size: 24px;\r\n  }\r\n\r\n  .comment-button {\r\n    display: none;\r\n  }\r\n\r\n  .comment-button1 {\r\n    background: none;\r\n    border: none;\r\n    align-self: flex-end;\r\n    margin-bottom: 2.3rem;\r\n  }\r\n\r\n  .comment-button1 i {\r\n    color: var(--bs-gray);\r\n  }\r\n\r\n  .comment-button1 i:hover {\r\n    color: var(--bs-cyan);\r\n    font-size: 28px;\r\n  }\r\n\r\n  .movie-content-container {\r\n    position: relative;\r\n  }\r\n\r\n  .popUp-modal {\r\n    border: 1px solid #ccc;\r\n    position: fixed;\r\n    background: linear-gradient(to bottom, #cfe7f8, #4096b0);\r\n    z-index: 11;\r\n    top: 80%;\r\n    width: 90%;\r\n    /* height: calc(205vw * (375 / 660)); */\r\n    height: calc(100vw * 0.8);\r\n    overflow-y: scroll;\r\n    overflow-x: hidden;\r\n    margin-top: 4.5rem;\r\n    border-radius: 5px;\r\n    box-shadow: 0 0 10px rgba(152, 220, 222, 0.5);\r\n    cursor: pointer;\r\n    font-family: 'Montserrat', sans-serif;\r\n  }\r\n\r\n  .popUp-modal::-webkit-scrollbar {\r\n    width: 0.5rem;\r\n    height: 15px;\r\n  }\r\n\r\n  .popUp-modal::-webkit-scrollbar-thumb {\r\n    background: linear-gradient(to bottom, #cfe7f8, #4096b0);\r\n    border-radius: 20px;\r\n  }\r\n\r\n  .popUp-modal::-webkit-scrollbar-thumb:hover {\r\n    opacity: 1;\r\n  }\r\n\r\n  .popUp-modal .close-button {\r\n    position: absolute;\r\n    top: 1rem;\r\n    right: 1rem;\r\n    font-size: 1.2rem;\r\n    color: #7cacac;\r\n    background: none;\r\n    border: none;\r\n  }\r\n\r\n  \r\n  .popUp-h2-text {\r\n    margin: 0;\r\n  }\r\n\r\n.popUp-h2-comment-title {\r\n    position: relative;\r\n    top: -50%;\r\n    left: 5%;\r\n    margin: 0;\r\n    border: none;\r\n    color: var(--bs-success-text);\r\n    font-family: 'Montserrat', sans-serif;\r\n  }\r\n\r\n\r\n  .m-title {\r\n    text-align: center;\r\n    font-size: 25px;\r\n    color: var(--bs-warning);\r\n  }\r\n\r\n  .close-button :hover {\r\n    color: var(--bs-warning);\r\n  }\r\n\r\n  .imgdes {\r\n    display: flex;\r\n    margin: 1rem;\r\n    flex-direction: column;\r\n  }\r\n\r\n  .imgdes img {\r\n    width: 250px;\r\n    height: 300px;\r\n    align-self: center;\r\n  }\r\n\r\n  .imgdes .para {\r\n    text-align: justify;\r\n    margin: 1rem 0 0 -3rem;\r\n    font-family: 'Montserrat', sans-serif;\r\n    width: 90%;\r\n    font-size: 10px;\r\n  }\r\n\r\n  .modal-content {\r\n    display: flex;\r\n  }\r\n\r\n  .descriptions {\r\n    display: flex;\r\n    position: relative;\r\n    bottom: 50%;\r\n    align-items: center;\r\n  }\r\n\r\n  .descriptions p {\r\n    font-family: 'Montserrat', sans-serif;\r\n    padding-left: 0.7rem;\r\n    text-decoration: underline;\r\n    font-size: 13px;\r\n    font-style: italic;\r\n    color: var(--bs-success-text);\r\n  }\r\n\r\n  .commentcontainer {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    margin-left: 1rem;\r\n    border: none;\r\n  }\r\n\r\n  .commentcontainer h5 {\r\n    font-size: 13px;\r\n    margin-right: 2rem;\r\n  }\r\n\r\n  .comment-form {\r\n    text-align: center;\r\n    position: relative;\r\n    left: 23%;\r\n    top: -10%;\r\n    background-color: #a6caf0;\r\n    color: white;\r\n    padding: 10px 20px;\r\n    border: none;\r\n    border-radius: 4px;\r\n    font-size: 1rem;\r\n  }\r\n\r\n  .comment-form input[type=\"text\"],\r\n  .comment-form textarea {\r\n    padding: 10px;\r\n    margin-bottom: 15px;\r\n    border: 1px solid #ccc;\r\n    border-radius: 4px;\r\n    font-size: 1rem;\r\n  }\r\n\r\n  .comment-form textarea {\r\n    height: 10vw;\r\n  }\r\n\r\n  .submit-button {\r\n    background-color: var(--bs-info);\r\n    color: var(--bs-dark);\r\n    border: none;\r\n    border-radius: 4px;\r\n    cursor: pointer;\r\n    font-size: 15px;\r\n    width: 19vw;\r\n    height: 7vw;\r\n    font-family: 'Montserrat', sans-serif;\r\n  }\r\n}\r\n\r\n@media (min-width: 668px) and (max-width: 1020px) {\r\n  .container-cards {\r\n    grid-template-columns: repeat(3, 1fr);\r\n    grid-template-rows: repeat(2, 1fr);\r\n  }\r\n\r\n  .logo {\r\n    width: 80px;\r\n    height: 80px;\r\n  }\r\n\r\n  .nav-content {\r\n    margin-right: 4rem;\r\n  }\r\n\r\n  .nav-content li {\r\n    font-size: 17px;\r\n  }\r\n\r\n  button {\r\n    width: 9vw;\r\n    height: 4.5vw;\r\n  }\r\n\r\n  form {\r\n    margin: calc(3rem - 1.5rem) calc(5rem - 1.5rem) 0 0;\r\n    margin-top: 4rem;\r\n  }\r\n\r\n  .home-container h2 {\r\n    margin-bottom: 1rem;\r\n    font-size: 24px;\r\n    text-align: center;\r\n  }\r\n\r\n  .comment-button {\r\n    width: 10vw;\r\n    height: 3.5vw;\r\n  }\r\n\r\n  .comment-button1 {\r\n    display: none;\r\n  }\r\n\r\n  .mobile-menu {\r\n    display: none;\r\n  }\r\n\r\n  .search-button {\r\n    width: 9vw;\r\n    height: 4.5vw;\r\n  }\r\n\r\n  .popUp-modal {\r\n    border: 1px solid #ccc;\r\n    position: fixed;\r\n    background: linear-gradient(to bottom, #cfe7f8, #4096b0);\r\n    z-index: 10;\r\n    top: 50%;\r\n    left: 50%;\r\n    width: 90vw;\r\n    height: 70vw;\r\n    overflow-y: scroll;\r\n    overflow-x: hidden;\r\n    margin-top: 5.5rem;\r\n    border-radius: 5px;\r\n    box-shadow: 0 0 10px rgba(152, 220, 222, 0.5);\r\n    cursor: pointer;\r\n    font-family: 'Montserrat', sans-serif;\r\n  }\r\n\r\n  .popUp-modal::-webkit-scrollbar {\r\n    width: 0.5rem;\r\n    height: 15px;\r\n  }\r\n\r\n  .popUp-modal::-webkit-scrollbar-thumb {\r\n    background: linear-gradient(to bottom, #cfe7f8, #4096b0);\r\n    border-radius: 20px;\r\n  }\r\n\r\n  .popUp-modal::-webkit-scrollbar-thumb:hover {\r\n    opacity: 1;\r\n  }\r\n\r\n  .popUp-modal .close-button {\r\n    position: absolute;\r\n    top: 1rem;\r\n    right: 1rem;\r\n    font-size: 1.2rem;\r\n    color: #7cacac;\r\n    background: none;\r\n    border: none;\r\n  }\r\n\r\n  .m-title {\r\n    text-align: center;\r\n    font-size: 25px;\r\n    color: var(--bs-warning);\r\n  }\r\n\r\n  .close-button :hover {\r\n    color: var(--bs-warning);\r\n  }\r\n\r\n  .imgdes {\r\n    display: flex;\r\n    margin: 1rem;\r\n    flex-direction: column;\r\n  }\r\n\r\n  .imgdes img {\r\n    width: 250px;\r\n    height: 300px;\r\n    align-self: center;\r\n  }\r\n\r\n  .imgdes .para {\r\n    text-align: justify;\r\n    margin: 1rem 0 0 -3rem;\r\n    font-family: 'Montserrat', sans-serif;\r\n    width: 90%;\r\n    font-size: 10px;\r\n  }\r\n\r\n  .modal-content {\r\n    display: flex;\r\n  }\r\n\r\n  .popUp-h2-text {\r\n    margin: 0;\r\n  }\r\n\r\n  .popUp-h2-comment-title {\r\n    position: relative;\r\n    top: -30%;\r\n    left: 24%;\r\n    margin: 0;\r\n    border: none;\r\n    color: var(--bs-success-text);\r\n    font-family: 'Montserrat', sans-serif;\r\n  }\r\n\r\n  .descriptions {\r\n    display: flex;\r\n    position: relative;\r\n    bottom: 50%;\r\n    align-items: center;\r\n  }\r\n\r\n  .descriptions p {\r\n    font-family: 'Montserrat', sans-serif;\r\n    padding-left: 0.7rem;\r\n    text-decoration: underline;\r\n    font-size: 13px;\r\n    font-style: italic;\r\n    color: var(--bs-success-text);\r\n  }\r\n\r\n  .commentcontainer {\r\n    display: flex;\r\n    margin-left: 1rem;\r\n    justify-content: center;\r\n    border: none;\r\n  }\r\n\r\n  .commentcontainer h5 {\r\n    font-size: 13px;\r\n    margin-right: 2rem;\r\n  }\r\n\r\n  .comment-form {\r\n    text-align: center;\r\n    position: relative;\r\n    left: 25%;\r\n    top: -5%;\r\n    background-color: #a6caf0;\r\n    color: white;\r\n    padding: 10px 20px;\r\n    border: none;\r\n    border-radius: 4px;\r\n    font-size: 1rem;\r\n    width: 40vw;\r\n  }\r\n\r\n  .comment-form input[type=\"text\"],\r\n  .comment-form textarea {\r\n    padding: 10px;\r\n    margin-bottom: 15px;\r\n    border: 1px solid #ccc;\r\n    border-radius: 4px;\r\n    font-size: 1rem;\r\n  }\r\n\r\n  .comment-form textarea {\r\n    height: 10vw;\r\n  }\r\n\r\n  .submit-button {\r\n    background-color: var(--bs-info);\r\n    color: var(--bs-dark);\r\n    border: none;\r\n    border-radius: 4px;\r\n    cursor: pointer;\r\n    font-size: 15px;\r\n    width: 19vw;\r\n    height: 7vw;\r\n    font-family: 'Montserrat', sans-serif;\r\n  }\r\n}\r\n\r\n@media (min-width: 1021px) {\r\n  .comment-button1 {\r\n    display: none;\r\n  }\r\n\r\n  .mobile-menu {\r\n    display: none;\r\n  }\r\n\r\n  .home-container h2 {\r\n    margin-right: 3rem;\r\n  }\r\n\r\n  .search-button {\r\n    position: relative;\r\n    top: 3px;\r\n  }\r\n\r\n  .movie-content-container {\r\n    position: relative;\r\n  }\r\n\r\n  .popUp-modal {\r\n    border: 1px solid #ccc;\r\n    position: fixed;\r\n    background: linear-gradient(to bottom, #cfe7f8, #4096b0);\r\n    z-index: 11;\r\n    top: 80%;\r\n    left: 50%;\r\n    width: 70vw;\r\n    height: 40vw;\r\n    overflow-y: scroll;\r\n    overflow-x: hidden;\r\n    margin-left: 7rem;\r\n    margin-top: 6.2rem;\r\n    border-radius: 5px;\r\n    box-shadow: 0 0 10px rgba(152, 220, 222, 0.5);\r\n    cursor: pointer;\r\n    font-family: 'Montserrat', sans-serif;\r\n  }\r\n\r\n  .popUp-modal::-webkit-scrollbar {\r\n    width: 0.5rem;\r\n    height: 15px;\r\n  }\r\n\r\n  .popUp-modal::-webkit-scrollbar-thumb {\r\n    background: linear-gradient(to bottom, #cfe7f8, #4096b0);\r\n    border-radius: 20px;\r\n  }\r\n\r\n  .popUp-modal::-webkit-scrollbar-thumb:hover {\r\n    opacity: 1;\r\n  }\r\n\r\n  .popUp-modal .close-button {\r\n    position: absolute;\r\n    top: 1rem;\r\n    right: -1rem;\r\n    font-size: 1.5rem;\r\n    color: #7cacac;\r\n    background: none;\r\n    border: none;\r\n  }\r\n\r\n  .m-title {\r\n    text-align: center;\r\n    font-size: 27px;\r\n    color: var(--bs-warning);\r\n  }\r\n\r\n  .close-button :hover {\r\n    color: var(--bs-warning);\r\n  }\r\n\r\n  .imgdes {\r\n    display: flex;\r\n    margin: 2rem;\r\n  }\r\n\r\n  .para {\r\n    text-align: justify;\r\n    margin: 2rem 0 0 -3rem;\r\n    font-family: 'Montserrat', sans-serif;\r\n    width: 100%;\r\n  }\r\n\r\n  .modal-content {\r\n    display: flex;\r\n  }\r\n\r\n  .popUp-h2-text {\r\n    margin: 0;\r\n    \r\n  }\r\n\r\n  .popUp-h2-comment-title {\r\n    position: relative;\r\n    top: -50%;\r\n    left: 23%;\r\n    margin: 0;\r\n    border: none;\r\n    color: var(--bs-success-text);\r\n    font-family: 'Montserrat', sans-serif;\r\n  }\r\n\r\n  .p-class {\r\n    margin: 5px;\r\n  }\r\n\r\n\r\n  .descriptions {\r\n    display: flex;\r\n    justify-content: space-evenly;\r\n    left: 2rem;\r\n    position: relative;\r\n    bottom: 40%;\r\n    align-items: flex-end;\r\n  }\r\n\r\n  .descriptions p {\r\n    font-family: 'Montserrat', sans-serif;\r\n    padding-left: 0.5rem;\r\n    text-decoration: underline;\r\n    font-size: 22px;\r\n    font-style: italic;\r\n    color: var(--bs-warning);\r\n  }\r\n\r\n  .commentcontainer {\r\n    display: flex;\r\n    justify-content: center;\r\n    margin-right: 3rem;\r\n    border: none;\r\n  }\r\n\r\n  .commentcontainer h5 {\r\n    font-size: 16px;\r\n    margin-right: 2rem;\r\n  }\r\n\r\n  .comment-form {\r\n    text-align: center;\r\n    position: relative;\r\n    left: 25%;\r\n    background-color: #a6caf0;\r\n    color: white;\r\n    padding: 10px 20px;\r\n    border: none;\r\n    border-radius: 4px;\r\n    font-size: 1rem;\r\n    width: 30vw;\r\n  }\r\n\r\n  .comment-form input[type=\"text\"],\r\n  .comment-form textarea {\r\n    padding: 10px;\r\n    margin-bottom: 15px;\r\n    border: 1px solid #ccc;\r\n    border-radius: 4px;\r\n    font-size: 1rem;\r\n  }\r\n\r\n  .comment-form textarea {\r\n    height: 3.5vw;\r\n  }\r\n\r\n  .submit-button {\r\n    background-color: var(--bs-info);\r\n    color: var(--bs-dark);\r\n    border: none;\r\n    border-radius: 4px;\r\n    cursor: pointer;\r\n    font-size: 15px;\r\n    font-family: 'Montserrat', sans-serif;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"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","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');\r\n\r\n:root {\r\n  --bs-red: #dc3545;\r\n  --bs-cyan: #0dcaf0;\r\n  --bs-black: #000000d7;\r\n  --bs-white: #fff;\r\n  --bs-gray: #6c757d;\r\n  --bs-gray-700: #495057;\r\n  --bs-gray-800: #343a40;\r\n  --bs-gray-900: #212529;\r\n  --bs-primary: #0d6efd;\r\n  --bs-secondary: #6c757d;\r\n  --bs-success: #155f3ce7;\r\n  --bs-info: #0dcaf0;\r\n  --bs-warning: #ffc107;\r\n  --bs-danger: #dc3545;\r\n  --bs-light: #f8f9fa;\r\n  --bs-dark: #212529;\r\n  --bs-secondary-text: #6c757d;\r\n  --bs-success-text: #146c43;\r\n}\r\n\r\nbody {\r\n  margin: auto 0;\r\n  overflow-x: hidden;\r\n  position: relative;\r\n\r\n  /* background-color: var(--bs-gray-700); */\r\n  font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\nmain {\r\n  border-bottom: 2px solid var(--bs-cyan);\r\n  margin-top: 7rem;\r\n}\r\n\r\nmain::before {\r\n  content: '';\r\n  position: absolute;\r\n  z-index: 0;\r\n  pointer-events: none;\r\n  top: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  background: url(./asset/img/home__bg.jpg);\r\n  opacity: 0.2;\r\n}\r\n\r\nheader {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  background: var(--bs-cyan);\r\n  border-bottom: 2px solid var(--bs-cyan);\r\n  color: var(--bs-light);\r\n  padding: 0.5rem;\r\n  position: fixed;\r\n  z-index: 10;\r\n  width: 100%;\r\n  top: 0;\r\n}\r\n\r\n.header-content-logo {\r\n  display: flex;\r\n}\r\n\r\n.logo {\r\n  background: url('./asset/img/logo.jpg') no-repeat;\r\n  background-size: cover;\r\n  width: 100px;\r\n  height: 100px;\r\n  border-radius: 50px;\r\n}\r\n\r\n.nav-content {\r\n  display: flex;\r\n  list-style: none;\r\n  margin-right: 8rem;\r\n}\r\n\r\n.header-content-nav {\r\n  display: flex;\r\n  justify-content: space-around;\r\n  align-self: center;\r\n  margin-right: 3rem;\r\n}\r\n\r\n.nav-content li {\r\n  margin-left: 3rem;\r\n  font-size: 20px;\r\n}\r\n\r\n.nav-content li a {\r\n  text-decoration: none;\r\n  color: var(--bs-light);\r\n}\r\n\r\nli a:hover {\r\n  text-decoration: underline;\r\n  color: var(--bs-warning);\r\n}\r\n\r\nbutton {\r\n  margin-left: 1rem;\r\n  width: 6vw;\r\n  height: 2vw;\r\n}\r\n\r\n.home-title {\r\n  color: var(--bs-light);\r\n  text-align: left;\r\n  margin-left: 1rem;\r\n}\r\n\r\n.home-container {\r\n  margin-top: 3rem;\r\n  overflow-x: hidden;\r\n  margin-right: 0.5rem;\r\n  position: relative;\r\n}\r\n\r\n.home-container h2 {\r\n  text-align: center;\r\n  margin-top: 2.5rem;\r\n  background: linear-gradient(45deg, #66fc3d, #46c4d2, #21a7e0ee);\r\n  -webkit-background-clip: text;\r\n  color: transparent;\r\n  /* stylelint-disable-next-line csstree/validator */\r\n  background-clip: text;\r\n  font-size: 27px;\r\n}\r\n\r\n.sign-in {\r\n  margin-right: 1rem;\r\n  background: none;\r\n  border: none;\r\n}\r\n\r\n.sign-in i {\r\n  font-size: 50px;\r\n  color: var(--bs-light);\r\n}\r\n\r\n.overlay i {\r\n  position: absolute;\r\n  bottom: 45%;\r\n  font-size: 50px;\r\n  color: var(--bs-light);\r\n}\r\n\r\n.movie-content i {\r\n  color: var(--bs-black);\r\n  font-size: 25px;\r\n}\r\n\r\n.sign-in i:hover {\r\n  font-size: 50px;\r\n  color: var(--bs-warning);\r\n}\r\n\r\n.container-cards {\r\n  display: grid;\r\n  grid-template-columns: repeat(4, 1fr);\r\n  grid-template-rows: repeat(2, 1fr);\r\n  row-gap: 10px;\r\n  margin-top: 4rem;\r\n  position: relative;\r\n}\r\n\r\nform {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  position: absolute;\r\n  top: 5px;\r\n  right: 0;\r\n  margin: 2rem;\r\n  font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\n.search-button {\r\n  width: 8vw;\r\n  height: 2.5vw;\r\n}\r\n\r\n.search-input-container {\r\n  display: flex;\r\n  align-items: flex-start;\r\n  justify-content: space-around;\r\n}\r\n\r\n.search-input {\r\n  padding: 10px;\r\n  border: 1px solid #ccc;\r\n  border-radius: 4px;\r\n}\r\n\r\n.comment-button {\r\n  width: 11vw;\r\n  height: 3vw;\r\n  align-self: flex-end;\r\n}\r\n\r\n.search-button,\r\n.comment-button {\r\n  background-color: var(--bs-primary);\r\n  color: var(--bs-light);\r\n  border: none;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  font-size: 12px;\r\n  font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\n.comment-button,\r\n.search-button:hover {\r\n  background-color: var(--bs-cyan);\r\n}\r\n\r\n.movie-content-container {\r\n  margin: 0.5rem;\r\n  border-radius: 11px;\r\n  box-shadow: 0 4px 8px rgba(50, 108, 184, 0.5);\r\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\r\n  cursor: pointer;\r\n  font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\n.movie-thumbnail {\r\n  background-size: contain;\r\n  z-index: 5;\r\n  border-radius: 10px;\r\n  text-align: center;\r\n  position: relative;\r\n}\r\n\r\n.movie-content {\r\n  padding: 3rem;\r\n  position: relative;\r\n}\r\n\r\n.overlay {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  background-color: rgba(62, 195, 243, 0.45);\r\n  opacity: 0;\r\n  transition: opacity 0.3s ease;\r\n  border-radius: 12px;\r\n}\r\n\r\n.overlay i:hover {\r\n  color: var(--bs-warning);\r\n}\r\n\r\n.overlay:hover {\r\n  opacity: 1;\r\n}\r\n\r\n.movie-content i:hover {\r\n  color: var(--bs-danger);\r\n}\r\n\r\n.movie-content h3 {\r\n  padding-bottom: 1rem;\r\n  position: absolute;\r\n  top: 0;\r\n  text-align: center;\r\n  color: var(--bs-red);\r\n}\r\n\r\n.movie-thumbnail:hover {\r\n  transform: scale(1.05);\r\n  box-shadow: 0 8px 16px rgba(53, 139, 210, 0.4);\r\n}\r\n\r\n.movie-comment {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  position: relative;\r\n  top: 1.5rem;\r\n}\r\n\r\n.comment-button:hover {\r\n  background: var(--bs-secondary);\r\n}\r\n\r\n.footer-copyright {\r\n  font-family: 'Montserrat', sans-serif;\r\n  background:\r\n    linear-gradient(\r\n      to right,\r\n      var(--bs-white),\r\n      var(--bs-warning),\r\n      var(--bs-cyan)\r\n    );\r\n  /* stylelint-disable-next-line csstree/validator */\r\n  background-clip: text;\r\n  -webkit-background-clip: text;\r\n  color: transparent;\r\n  padding: 20px;\r\n  text-align: center;\r\n  font-weight: 700;\r\n}\r\n\r\n.popUp-modal {\r\n  display: none;\r\n  border: 3px solid red;\r\n  flex-direction: column;\r\n}\r\n\r\n.comment-form {\r\n  border: 3px solid green;\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 150px;\r\n  position: relative;\r\n}\r\n\r\n.comment-container {\r\n  border: 3px solid brown;\r\n  width: 250px;\r\n  overflow-y: scroll;\r\n}\r\n\r\n@media (min-width: 375px) and (max-width: 667px) {\r\n  .logo {\r\n    width: 60px;\r\n    height: 60px;\r\n  }\r\n\r\n  .header-content-nav {\r\n    display: none;\r\n  }\r\n\r\n  .mobile-menu {\r\n    margin: 1rem 3rem 0 3rem;\r\n    font-size: 28px;\r\n  }\r\n\r\n  .container-cards {\r\n    display: flex;\r\n    flex-direction: column;\r\n  }\r\n\r\n  form {\r\n    margin: calc(7rem - 1.5rem) calc(5rem - 1.5rem) 0 0;\r\n    bottom: 0;\r\n    justify-content: center;\r\n  }\r\n\r\n  .search-button {\r\n    width: 18vw;\r\n    height: calc(6vw + 6px);\r\n  }\r\n\r\n  .home-container {\r\n    margin-top: 0;\r\n  }\r\n\r\n  .home-container h2 {\r\n    margin-bottom: 1rem;\r\n    font-size: 24px;\r\n  }\r\n\r\n  .comment-button {\r\n    display: none;\r\n  }\r\n\r\n  .comment-button1 {\r\n    background: none;\r\n    border: none;\r\n    align-self: flex-end;\r\n    margin-bottom: 2.3rem;\r\n  }\r\n\r\n  .comment-button1 i {\r\n    color: var(--bs-gray);\r\n  }\r\n\r\n  .comment-button1 i:hover {\r\n    color: var(--bs-cyan);\r\n    font-size: 28px;\r\n  }\r\n\r\n  .movie-content-container {\r\n    position: relative;\r\n  }\r\n\r\n  .popUp-modal {\r\n    border: 1px solid #ccc;\r\n    position: fixed;\r\n    background: linear-gradient(to bottom, #cfe7f8, #4096b0);\r\n    z-index: 11;\r\n    top: 80%;\r\n    width: 90%;\r\n\r\n    /* height: calc(205vw * (375 / 660)); */\r\n    height: calc(100vw * 0.8);\r\n    overflow-y: scroll;\r\n    overflow-x: hidden;\r\n    margin-top: 4.5rem;\r\n    border-radius: 5px;\r\n    box-shadow: 0 0 10px rgba(152, 220, 222, 0.5);\r\n    cursor: pointer;\r\n    font-family: 'Montserrat', sans-serif;\r\n  }\r\n\r\n  .popUp-modal::-webkit-scrollbar {\r\n    width: 0.5rem;\r\n    height: 15px;\r\n  }\r\n\r\n  .popUp-modal::-webkit-scrollbar-thumb {\r\n    background: linear-gradient(to bottom, #cfe7f8, #4096b0);\r\n    border-radius: 20px;\r\n  }\r\n\r\n  .popUp-modal::-webkit-scrollbar-thumb:hover {\r\n    opacity: 1;\r\n  }\r\n\r\n  .popUp-modal .close-button {\r\n    position: absolute;\r\n    top: 1rem;\r\n    right: 1rem;\r\n    font-size: 1.2rem;\r\n    color: #7cacac;\r\n    background: none;\r\n    border: none;\r\n  }\r\n\r\n  .popUp-h2-text {\r\n    margin: 0;\r\n  }\r\n\r\n  .popUp-h2-comment-title {\r\n    position: relative;\r\n    top: -50%;\r\n    left: 5%;\r\n    margin: 0;\r\n    border: none;\r\n    color: var(--bs-success-text);\r\n    font-family: 'Montserrat', sans-serif;\r\n  }\r\n\r\n  .m-title {\r\n    text-align: center;\r\n    font-size: 25px;\r\n    color: var(--bs-warning);\r\n  }\r\n\r\n  .close-button :hover {\r\n    color: var(--bs-warning);\r\n  }\r\n\r\n  .imgdes {\r\n    display: flex;\r\n    margin: 1rem;\r\n    flex-direction: column;\r\n  }\r\n\r\n  .imgdes img {\r\n    width: 250px;\r\n    height: 300px;\r\n    align-self: center;\r\n  }\r\n\r\n  .imgdes .para {\r\n    text-align: justify;\r\n    margin: 1rem 0 0 -3rem;\r\n    font-family: 'Montserrat', sans-serif;\r\n    width: 90%;\r\n    font-size: 10px;\r\n  }\r\n\r\n  .modal-content {\r\n    display: flex;\r\n  }\r\n\r\n  .descriptions {\r\n    display: flex;\r\n    position: relative;\r\n    bottom: 50%;\r\n    align-items: center;\r\n  }\r\n\r\n  .descriptions p {\r\n    font-family: 'Montserrat', sans-serif;\r\n    padding-left: 0.7rem;\r\n    text-decoration: underline;\r\n    font-size: 13px;\r\n    font-style: italic;\r\n    color: var(--bs-success-text);\r\n  }\r\n\r\n  .commentcontainer {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    margin-left: 1rem;\r\n    border: none;\r\n  }\r\n\r\n  .commentcontainer h5 {\r\n    font-size: 13px;\r\n    margin-right: 2rem;\r\n  }\r\n\r\n  .comment-form {\r\n    text-align: center;\r\n    position: relative;\r\n    left: 23%;\r\n    top: -10%;\r\n    background-color: #a6caf0;\r\n    color: white;\r\n    padding: 10px 20px;\r\n    border: none;\r\n    border-radius: 4px;\r\n    font-size: 1rem;\r\n  }\r\n\r\n  .comment-form input[type=\"text\"],\r\n  .comment-form textarea {\r\n    padding: 10px;\r\n    margin-bottom: 15px;\r\n    border: 1px solid #ccc;\r\n    border-radius: 4px;\r\n    font-size: 1rem;\r\n  }\r\n\r\n  .comment-form textarea {\r\n    height: 10vw;\r\n  }\r\n\r\n  .submit-button {\r\n    background-color: var(--bs-info);\r\n    color: var(--bs-dark);\r\n    border: none;\r\n    border-radius: 4px;\r\n    cursor: pointer;\r\n    font-size: 15px;\r\n    width: 19vw;\r\n    height: 7vw;\r\n    font-family: 'Montserrat', sans-serif;\r\n  }\r\n}\r\n\r\n@media (min-width: 668px) and (max-width: 1020px) {\r\n  .container-cards {\r\n    grid-template-columns: repeat(3, 1fr);\r\n    grid-template-rows: repeat(2, 1fr);\r\n  }\r\n\r\n  .logo {\r\n    width: 80px;\r\n    height: 80px;\r\n  }\r\n\r\n  .nav-content {\r\n    margin-right: 4rem;\r\n  }\r\n\r\n  .nav-content li {\r\n    font-size: 17px;\r\n  }\r\n\r\n  button {\r\n    width: 9vw;\r\n    height: 4.5vw;\r\n  }\r\n\r\n  form {\r\n    margin: calc(3rem - 1.5rem) calc(5rem - 1.5rem) 0 0;\r\n    margin-top: 4rem;\r\n  }\r\n\r\n  .home-container h2 {\r\n    margin-bottom: 1rem;\r\n    font-size: 24px;\r\n    text-align: center;\r\n  }\r\n\r\n  .comment-button {\r\n    width: 10vw;\r\n    height: 3.5vw;\r\n  }\r\n\r\n  .comment-button1 {\r\n    display: none;\r\n  }\r\n\r\n  .mobile-menu {\r\n    display: none;\r\n  }\r\n\r\n  .search-button {\r\n    width: 9vw;\r\n    height: 4.5vw;\r\n  }\r\n\r\n  .popUp-modal {\r\n    border: 1px solid #ccc;\r\n    position: fixed;\r\n    background: linear-gradient(to bottom, #cfe7f8, #4096b0);\r\n    z-index: 10;\r\n    top: 50%;\r\n    left: 50%;\r\n    width: 90vw;\r\n    height: 70vw;\r\n    overflow-y: scroll;\r\n    overflow-x: hidden;\r\n    margin-top: 5.5rem;\r\n    border-radius: 5px;\r\n    box-shadow: 0 0 10px rgba(152, 220, 222, 0.5);\r\n    cursor: pointer;\r\n    font-family: 'Montserrat', sans-serif;\r\n  }\r\n\r\n  .popUp-modal::-webkit-scrollbar {\r\n    width: 0.5rem;\r\n    height: 15px;\r\n  }\r\n\r\n  .popUp-modal::-webkit-scrollbar-thumb {\r\n    background: linear-gradient(to bottom, #cfe7f8, #4096b0);\r\n    border-radius: 20px;\r\n  }\r\n\r\n  .popUp-modal::-webkit-scrollbar-thumb:hover {\r\n    opacity: 1;\r\n  }\r\n\r\n  .popUp-modal .close-button {\r\n    position: absolute;\r\n    top: 1rem;\r\n    right: 1rem;\r\n    font-size: 1.2rem;\r\n    color: #7cacac;\r\n    background: none;\r\n    border: none;\r\n  }\r\n\r\n  .m-title {\r\n    text-align: center;\r\n    font-size: 25px;\r\n    color: var(--bs-warning);\r\n  }\r\n\r\n  .close-button :hover {\r\n    color: var(--bs-warning);\r\n  }\r\n\r\n  .imgdes {\r\n    display: flex;\r\n    margin: 1rem;\r\n    flex-direction: column;\r\n  }\r\n\r\n  .imgdes img {\r\n    width: 250px;\r\n    height: 300px;\r\n    align-self: center;\r\n  }\r\n\r\n  .imgdes .para {\r\n    text-align: justify;\r\n    margin: 1rem 0 0 -3rem;\r\n    font-family: 'Montserrat', sans-serif;\r\n    width: 90%;\r\n    font-size: 10px;\r\n  }\r\n\r\n  .modal-content {\r\n    display: flex;\r\n  }\r\n\r\n  .popUp-h2-text {\r\n    margin: 0;\r\n  }\r\n\r\n  .popUp-h2-comment-title {\r\n    position: relative;\r\n    top: -30%;\r\n    left: 24%;\r\n    margin: 0;\r\n    border: none;\r\n    color: var(--bs-success-text);\r\n    font-family: 'Montserrat', sans-serif;\r\n  }\r\n\r\n  .descriptions {\r\n    display: flex;\r\n    position: relative;\r\n    bottom: 50%;\r\n    align-items: center;\r\n  }\r\n\r\n  .descriptions p {\r\n    font-family: 'Montserrat', sans-serif;\r\n    padding-left: 0.7rem;\r\n    text-decoration: underline;\r\n    font-size: 13px;\r\n    font-style: italic;\r\n    color: var(--bs-success-text);\r\n  }\r\n\r\n  .commentcontainer {\r\n    display: flex;\r\n    margin-left: 1rem;\r\n    justify-content: center;\r\n    border: none;\r\n  }\r\n\r\n  .commentcontainer h5 {\r\n    font-size: 13px;\r\n    margin-right: 2rem;\r\n  }\r\n\r\n  .comment-form {\r\n    text-align: center;\r\n    position: relative;\r\n    left: 25%;\r\n    top: -5%;\r\n    background-color: #a6caf0;\r\n    color: white;\r\n    padding: 10px 20px;\r\n    border: none;\r\n    border-radius: 4px;\r\n    font-size: 1rem;\r\n    width: 40vw;\r\n  }\r\n\r\n  .comment-form input[type=\"text\"],\r\n  .comment-form textarea {\r\n    padding: 10px;\r\n    margin-bottom: 15px;\r\n    border: 1px solid #ccc;\r\n    border-radius: 4px;\r\n    font-size: 1rem;\r\n  }\r\n\r\n  .comment-form textarea {\r\n    height: 10vw;\r\n  }\r\n\r\n  .submit-button {\r\n    background-color: var(--bs-info);\r\n    color: var(--bs-dark);\r\n    border: none;\r\n    border-radius: 4px;\r\n    cursor: pointer;\r\n    font-size: 15px;\r\n    width: 19vw;\r\n    height: 7vw;\r\n    font-family: 'Montserrat', sans-serif;\r\n  }\r\n}\r\n\r\n@media (min-width: 1021px) {\r\n  .comment-button1 {\r\n    display: none;\r\n  }\r\n\r\n  .mobile-menu {\r\n    display: none;\r\n  }\r\n\r\n  .home-container h2 {\r\n    margin-right: 3rem;\r\n  }\r\n\r\n  .search-button {\r\n    position: relative;\r\n    top: 3px;\r\n  }\r\n\r\n  .movie-content-container {\r\n    position: relative;\r\n  }\r\n\r\n  .popUp-modal {\r\n    border: 1px solid #ccc;\r\n    position: fixed;\r\n    background: linear-gradient(to bottom, #cfe7f8, #4096b0);\r\n    z-index: 11;\r\n    top: 80%;\r\n    left: 50%;\r\n    width: 70vw;\r\n    height: 40vw;\r\n    overflow-y: scroll;\r\n    overflow-x: hidden;\r\n    margin-left: 7rem;\r\n    margin-top: 6.2rem;\r\n    border-radius: 5px;\r\n    box-shadow: 0 0 10px rgba(152, 220, 222, 0.5);\r\n    cursor: pointer;\r\n    font-family: 'Montserrat', sans-serif;\r\n  }\r\n\r\n  .popUp-modal::-webkit-scrollbar {\r\n    width: 0.5rem;\r\n    height: 15px;\r\n  }\r\n\r\n  .popUp-modal::-webkit-scrollbar-thumb {\r\n    background: linear-gradient(to bottom, #cfe7f8, #4096b0);\r\n    border-radius: 20px;\r\n  }\r\n\r\n  .popUp-modal::-webkit-scrollbar-thumb:hover {\r\n    opacity: 1;\r\n  }\r\n\r\n  .popUp-modal .close-button {\r\n    position: absolute;\r\n    top: 1rem;\r\n    right: -1rem;\r\n    font-size: 1.5rem;\r\n    color: #7cacac;\r\n    background: none;\r\n    border: none;\r\n  }\r\n\r\n  .m-title {\r\n    text-align: center;\r\n    font-size: 27px;\r\n    color: var(--bs-warning);\r\n  }\r\n\r\n  .close-button :hover {\r\n    color: var(--bs-warning);\r\n  }\r\n\r\n  .imgdes {\r\n    display: flex;\r\n    margin: 2rem;\r\n  }\r\n\r\n  .para {\r\n    text-align: justify;\r\n    margin: 2rem 0 0 -3rem;\r\n    font-family: 'Montserrat', sans-serif;\r\n    width: 100%;\r\n  }\r\n\r\n  .modal-content {\r\n    display: flex;\r\n  }\r\n\r\n  .popUp-h2-text {\r\n    margin: 0;\r\n  }\r\n\r\n  .popUp-h2-comment-title {\r\n    position: relative;\r\n    top: -50%;\r\n    left: 23%;\r\n    margin: 0;\r\n    border: none;\r\n    color: var(--bs-success-text);\r\n    font-family: 'Montserrat', sans-serif;\r\n  }\r\n\r\n  .p-class {\r\n    margin: 5px;\r\n  }\r\n\r\n  .descriptions {\r\n    display: flex;\r\n    justify-content: space-evenly;\r\n    left: 2rem;\r\n    position: relative;\r\n    bottom: 40%;\r\n    align-items: flex-end;\r\n  }\r\n\r\n  .descriptions p {\r\n    font-family: 'Montserrat', sans-serif;\r\n    padding-left: 0.5rem;\r\n    text-decoration: underline;\r\n    font-size: 22px;\r\n    font-style: italic;\r\n    color: var(--bs-warning);\r\n  }\r\n\r\n  .commentcontainer {\r\n    display: flex;\r\n    justify-content: center;\r\n    margin-right: 3rem;\r\n    border: none;\r\n  }\r\n\r\n  .commentcontainer h5 {\r\n    font-size: 16px;\r\n    margin-right: 2rem;\r\n  }\r\n\r\n  .comment-form {\r\n    text-align: center;\r\n    position: relative;\r\n    left: 25%;\r\n    background-color: #a6caf0;\r\n    color: white;\r\n    padding: 10px 20px;\r\n    border: none;\r\n    border-radius: 4px;\r\n    font-size: 1rem;\r\n    width: 30vw;\r\n  }\r\n\r\n  .comment-form input[type=\"text\"],\r\n  .comment-form textarea {\r\n    padding: 10px;\r\n    margin-bottom: 15px;\r\n    border: 1px solid #ccc;\r\n    border-radius: 4px;\r\n    font-size: 1rem;\r\n  }\r\n\r\n  .comment-form textarea {\r\n    height: 3.5vw;\r\n  }\r\n\r\n  .submit-button {\r\n    background-color: var(--bs-info);\r\n    color: var(--bs-dark);\r\n    border: none;\r\n    border-radius: 4px;\r\n    cursor: pointer;\r\n    font-size: 15px;\r\n    font-family: 'Montserrat', sans-serif;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2440,11 +2319,11 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
 /* harmony import */ var font_awesome_css_font_awesome_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! font-awesome/css/font-awesome.min.css */ "./node_modules/font-awesome/css/font-awesome.min.css");
-/* harmony import */ var _modules_none__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/none */ "./src/modules/none.js");
+/* harmony import */ var _modules_display_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/display.js */ "./src/modules/display.js");
 
 
 
-window.addEventListener('DOMContentLoaded', _modules_none__WEBPACK_IMPORTED_MODULE_2__["default"]);
+window.addEventListener('DOMContentLoaded', _modules_display_js__WEBPACK_IMPORTED_MODULE_2__["default"]);
 // import image from './asset/img/14.png';
 })();
 

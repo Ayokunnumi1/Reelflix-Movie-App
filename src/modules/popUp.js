@@ -16,8 +16,12 @@ const createCommentList = (comments) => comments.map((comment) => `
     `).join('');
 
 // Function to create the pop-up modal HTML
+
+export function calculateCommentLength(comments) {
+  return comments.length;
+}
 const createPopUpModal = (showDetails, comments) => {
-  const commentLength = comments.length;
+  const commentLength = calculateCommentLength(comments);
   const commentList = createCommentList(comments);
 
   return `
@@ -141,5 +145,4 @@ const addEventToCommentButton = () => {
     });
   });
 };
-
 export default addEventToCommentButton;
