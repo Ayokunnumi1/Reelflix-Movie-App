@@ -1,13 +1,7 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import './style.css';
-// eslint-disable-next-line import/extensions
 import 'font-awesome/css/font-awesome.min.css';
-import { displayShows } from './modules/display.js';
+import initializeApp from './modules/none';
 
-window.addEventListener('DOMContentLoaded', async () => {
-  const movieContainer = document.querySelector('.container-cards');
-  const page = await displayShows();
-  console.log('page :>> ', page);
-  movieContainer.insertAdjacentHTML('beforeend', page);
-});
+
+window.addEventListener('DOMContentLoaded', initializeApp);
 // import image from './asset/img/14.png';
