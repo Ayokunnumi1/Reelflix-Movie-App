@@ -142,16 +142,16 @@ button {
   color: var(--bs-light);
 }
 
-.movie-content i {
-  color: var(--bs-black);
-  font-size: 25px;
-}
-
 .overlay i {
   position: absolute;
   bottom: 45%;
   font-size: 50px;
   color: var(--bs-light);
+}
+
+.movie-content i {
+  color: var(--bs-black);
+  font-size: 25px;
 }
 
 .sign-in i:hover {
