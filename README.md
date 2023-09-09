@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-<div align="center">
+<div>
   <h3><b>Mini Netflix Website</b></h3>
 
 # 📗 Table of Contents
@@ -144,7 +144,7 @@ Give a ⭐️ if you like this project and follow me !
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- I would like to give  thanks  to  Microverse .
+- I would like to give  thanks  to  Microverse for creating this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
