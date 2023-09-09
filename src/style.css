@@ -142,16 +142,16 @@ button {
   color: var(--bs-light);
 }
 
+.movie-content i {
+  color: var(--bs-black);
+  font-size: 25px;
+}
+
 .overlay i {
   position: absolute;
   bottom: 45%;
   font-size: 50px;
   color: var(--bs-light);
-}
-
-.movie-content i {
-  color: var(--bs-white);
-  font-size: 25px;
 }
 
 .sign-in i:hover {
@@ -261,10 +261,6 @@ form {
 
 .movie-content i:hover {
   color: var(--bs-danger);
-}
-
-.movie-content i {
-  color: var(--bs-black);
 }
 
 .movie-content h3 {
@@ -400,6 +396,7 @@ form {
     z-index: 11;
     top: 80%;
     width: 90%;
+
     /* height: calc(205vw * (375 / 660)); */
     height: calc(100vw * 0.8);
     overflow-y: scroll;
@@ -435,12 +432,11 @@ form {
     border: none;
   }
 
-  
   .popUp-h2-text {
     margin: 0;
   }
 
-.popUp-h2-comment-title {
+  .popUp-h2-comment-title {
     position: relative;
     top: -50%;
     left: 5%;
@@ -449,7 +445,6 @@ form {
     color: var(--bs-success-text);
     font-family: 'Montserrat', sans-serif;
   }
-
 
   .m-title {
     text-align: center;
@@ -857,7 +852,6 @@ form {
 
   .popUp-h2-text {
     margin: 0;
-    
   }
 
   .popUp-h2-comment-title {
@@ -873,7 +867,6 @@ form {
   .p-class {
     margin: 5px;
   }
-
 
   .descriptions {
     display: flex;
