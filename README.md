@@ -7,6 +7,7 @@
 
 - [📗 Table of Contents](#-table-of-contents)
 - [JavaScript capstone project ](#javascript-capstone-project-)
+
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -23,9 +24,11 @@
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
 
+  <img src="./src/asset/img/miniNetflix.png" width="auto">
+
 # Mini-Netflix-Website <a name="about-project"></a>
 
-We built a Mini-Netflix-Website  that displays several Tv shows from an external APITV Shows API App.This is a JavaScript-based application that allows users to explore and interact with various TV shows. Users can view details about different TV shows, like  the comments and the likes. 
+We built a Mini-Netflix-Website that displays several Tv shows from an external APITV Shows API App.This is a JavaScript-based application that allows users to explore and interact with various TV shows. Users can view details about different TV shows, like the comments and the likes.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -33,12 +36,11 @@ We built a Mini-Netflix-Website  that displays several Tv shows from an external
 
 -**HTML & CSS**
 
- -**JAVASCRIPT**
+-**JAVASCRIPT**
 
- -**WEBPACK**
- 
- -**JEST**
+-**WEBPACK**
 
+-**JEST**
 
 ### Key Features <a name="key-features"></a>
 
@@ -101,8 +103,6 @@ To run the project, execute the following command:
 - Twitter: [@Ayokunnumi1] [https://twitter.com/AyokunnumiA]
 - LinkedIn: [Ayokunnumi] [https://www.linkedin.com/in/ayokunnumiomololu]
 
-
-
 👤 **Hydaline**
 
 - GitHub: [https://github.com/hydaline-code]
@@ -112,13 +112,11 @@ To run the project, execute the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
--  **[Add a About page ]**
+- **[Add a About page ]**
 
--  **[Add more interactivity ]**
+- **[Add more interactivity ]**
 
--  **[Add a contact form page ]**
-
-
+- **[Add a contact form page ]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -144,14 +142,13 @@ Give a ⭐️ if you like this project and follow me !
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- I would like to give  thanks  to  Microverse for creating this project.
+- I would like to give thanks to Microverse for creating this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
-
 
 This project is [MIT](https://github.com/https://github.com/Ayokunnumi1/dev/LICENSE) licensed.
 
