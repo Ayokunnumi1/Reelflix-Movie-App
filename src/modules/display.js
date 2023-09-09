@@ -155,8 +155,6 @@ export const displayShows = async () => {
             popUpModal.style.top = `${top}px`;
           };
 
-          
-
     movieContainer.insertAdjacentHTML('beforeend', createShowElement);
     const commentButton = document.querySelectorAll('.comment-button');
     commentButton.forEach((button) => {
