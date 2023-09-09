@@ -3,7 +3,6 @@
 
 <div align="center">
   <h3><b>Mini Netflix Website</b></h3>
-</div>
 
 # 📗 Table of Contents
 
