@@ -415,8 +415,12 @@ var createCommentList = function createCommentList(comments) {
 };
 
 // Function to create the pop-up modal HTML
+
 var createPopUpModal = function createPopUpModal(showDetails, comments) {
-  var commentLength = comments.length;
+  function calculateCommentLength(comments) {
+    return comments.length;
+  }
+  var commentLength = calculateCommentLength(comments);
   var commentList = createCommentList(comments);
   return "\n    <button class=\"close-button\"><i class=\"fa fa-close\"></i></button>\n    <h3 class=\"m-title\">".concat(showDetails.title, "</h3>\n    <div class=\"imgdes\">\n      <img src=\"").concat(showDetails.image, "\" alt=\"\" class=\"popUp-img\">\n      <p class=\"para\">").concat(showDetails.description, "</p>\n    </div>\n    <div class=\"modal-content\">\n      <div class=\"descriptions\">\n        <p>").concat(showDetails.genres, "</p>\n        <p>").concat(showDetails.language, "</p>\n        <p>").concat(showDetails.rating, "</p>\n      </div>\n    </div>\n    <div class=\"commentcontainer\">\n      <h2 class=\"popUp-h2-comment-title\">Comments(").concat(commentLength, ")</h2>\n      <div class=\"comment-container\">\n        <ul class=\"popUP-comment-content\">\n          ").concat(commentList, "\n        </ul>\n      </div>\n    </div>\n    <form action=\"\" class=\"comment-form\">\n      <input type=\"text\" name=\"text\" id=\"input-name\" required placeholder=\"Your name\">\n      <textarea name=\"text\" id=\"comment-text\" cols=\"30\" rows=\"10\" required placeholder=\"Add a comment\"></textarea>\n      <button type=\"submit\" id=\"").concat(showDetails.id, "\" class=\"submit-button\">Submit</button>\n    </form>\n  ");
 };

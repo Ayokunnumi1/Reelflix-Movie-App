@@ -79,15 +79,18 @@ const addEventToLikeButtons = () => {
 };
 
 // Initialize the application
+export function calculateTotalMovies(ShowObject) {
+  return ShowObject.length;
+}
 const initializeApp = async () => {
   const movies = await fetchShows(url);
   const likes = await getLikes(likesUrl);
   const filteredShowObject = processShowData(movies, likes);
+  const movieLength = calculateTotalMovies(filteredShowObject);
   const totalMovies = document.querySelector('.total-movies');
-  totalMovies.textContent = ` All movies (${filteredShowObject.length})`;
+  totalMovies.textContent = ` All movies (${movieLength})`;
   renderMovies(filteredShowObject);
   addEventToLikeButtons();
   addEventToCommentButton();
 };
-
 export default initializeApp;
