@@ -56,7 +56,7 @@ We built a Mini-Netflix-Website that displays several Tv shows from an external 
 
 ## 🚀 Description Video<a name="video-demo"></a>
 
-- [Link to our description video](https://drive.google.com/file/d/17jh4JKd81T7QvOJDLy_CoZUjgQS_UlN_/view?usp=sharing)
+- [Link to our description video](https://drive.google.com/file/d/1R0hGaFBCQyLNcjHi9UiPW7q_iTIgv7Uy/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -82,7 +82,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone  https://github.com/Ayokunnumi1/Mini-Netflix-Websit.git
+  git clone  git@github.com:Ayokunnumi1/Mini-Netflix-Website.git
 ```
 
 ### Usage
@@ -127,7 +127,7 @@ To run the project, execute the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/https://github.com/Ayokunnumi1).
+Feel free to check the [issues page](https://github.com/Ayokunnumi1).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -151,6 +151,6 @@ Give a ⭐️ if you like this project and follow me !
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/https://github.com/Ayokunnumi1/dev/LICENSE) licensed.
+This project is [MIT](https://github.com/Ayokunnumi1) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
