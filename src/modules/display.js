@@ -1,5 +1,7 @@
 import { fetchShows } from './fetchShows.js';
 import { getLikes, addLikes } from './fetchLikes.js';
+import updateLikesCount from './updateLikes.js';
+import calculateTotalMovies from './TotalMovies.js';
 import addEventToCommentButton from './popUp.js';
 
 const url = 'https://api.tvmaze.com/shows';
@@ -53,13 +55,6 @@ const renderMovies = (movies) => {
   });
 };
 
-// Function to update likes
-const updateLikesCount = (id) => {
-  const likesCount = document.querySelector(`.likes-count[id="${id}"] > span`);
-  const likesCountValue = parseInt(likesCount.textContent, 10);
-  likesCount.textContent = `${likesCountValue + 1}`;
-};
-
 // Function to handle like button click
 const handleLikeButtonClick = async (heartbutton) => {
   const heartbuttonId = parseInt(heartbutton.dataset.id, 10);
@@ -79,9 +74,6 @@ const addEventToLikeButtons = () => {
 };
 
 // Initialize the application
-export function calculateTotalMovies(ShowObject) {
-  return ShowObject.length;
-}
 const initializeApp = async () => {
   const movies = await fetchShows(url);
   const likes = await getLikes(likesUrl);

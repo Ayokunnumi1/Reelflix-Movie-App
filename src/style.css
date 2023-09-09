@@ -320,9 +320,11 @@ form {
 }
 
 .comment-container {
-  border: 3px solid brown;
-  width: 250px;
-  overflow-y: scroll;
+  background-color: var(--bs-secondary);
+  width: 350px;
+  height: 200px;
+  overflow: scroll;
+  color: var(--bs-light);
 }
 
 @media (min-width: 375px) and (max-width: 667px) {

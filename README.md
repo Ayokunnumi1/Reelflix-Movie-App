@@ -106,6 +106,7 @@ To run the project, execute the following command:
 👤 **Hydaline**
 
 - GitHub: [https://github.com/hydaline-code]
+- Twitter: [@hydalineC][https://twitter.com/@hydalineC]
 - LinkedIn: [https://www.linkedin.com/in/charlene-djoungang-0851aa21a/]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
