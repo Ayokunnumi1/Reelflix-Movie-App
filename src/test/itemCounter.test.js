@@ -1,4 +1,4 @@
-import { calculateTotalMovies } from '../modules/display.js';
+import calculateTotalMovies from '../modules/TotalMovies.js';
 
 describe('Shows counter test', () => {
   const movies = [
