@@ -2,8 +2,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <h3><b>JavaScript capstone project</b></h3>
-</div>
+  <h3><b>Mini Netflix Website</b></h3>
 
 # 📗 Table of Contents
 

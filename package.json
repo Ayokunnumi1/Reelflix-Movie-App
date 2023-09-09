@@ -117,6 +117,7 @@
     "find-up": "^4.1.0",
     "follow-redirects": "^1.15.2",
     "font-awesome": "^4.7.0",
+    "fontawesome": "^5.6.3",
     "forwarded": "^0.2.0",
     "fresh": "^0.5.2",
     "fs-monkey": "^1.0.4",
