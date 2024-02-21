@@ -1,7 +1,11 @@
-<a name="readme-top"></a>
+# REELFLIX MOVIES <a name="readme-top"></a>
 
-<div>
-  <h3><b>Mini Netflix Website</b></h3>
+<div align="center">
+  <img src="./src/asset/img/reelflix.gif" alt="reelflix"/>
+  <br/>
+  <br/>
+  <br/>
+</div>
 
 # 📗 Table of Contents
 
@@ -23,8 +27,6 @@
   - [⭐️ Show your support ](#️-show-your-support-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
-
-  <img src="./src/asset/img/miniNetflix.png" width="auto">
 
 # Mini-Netflix-Website <a name="about-project"></a>
 
