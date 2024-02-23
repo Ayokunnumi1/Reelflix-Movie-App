@@ -54,7 +54,7 @@ We built a Mini-Netflix-Website that displays several Tv shows from an external 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Visit our live project](https://ayokunnumi1.github.io/Mini-Netflix-Website/dist/)
+- [Visit our live project](https://ayokunnumi1.github.io/reelflix-movies/dist/)
 
 ## 🚀 Description Video<a name="video-demo"></a>
 
